@@ -6,12 +6,13 @@
 
     <groupId>tech.bytespot</groupId>
     <artifactId>daraja-api</artifactId>
-    <version>1.0.1-BETA</version>
+    <version>1.0.1-SNAPSHOT</version>
     <name>Daraja API Library</name>
     <description>This library helps java developers to integrate to MPESA APIs easily and fast.</description>
 
     <properties>
         <jdk.version>13</jdk.version>
+        <maven.javadoc.plugin>3.0.0</maven.javadoc.plugin>
         <maven.compiler.target>${jdk.version}</maven.compiler.target>
         <maven.compiler.source>${jdk.version}</maven.compiler.source>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -28,7 +29,7 @@
     <developers>
         <developer>
             <name>Eli Muraya</name>
-            <email>elimuraya.dev@bytes-pot.com</email>
+            <email>elijah.muraya@bytespot.tech</email>
             <url>https://www.linkedin.com/in/elijah-muraya-dev95</url>
         </developer>
     </developers>
@@ -40,10 +41,22 @@
         </license>
     </licenses>
     <scm>
-        <url>https://github.com/elimuraya-dev/m-pesa-lib</url>
-        <connection>scm:git:git@github.com:elimuraya-dev/m-pesa-lib.git</connection>
-        <developerConnection>scm:git:git@github.com:elimuraya-dev/m-pesa-lib.git</developerConnection>
+        <url>https://github.com/elimuraya-dev/daraja-api</url>
+        <connection>scm:git:git@github.com:elimuraya-dev/daraja-api.git</connection>
+        <developerConnection>scm:git:git@github.com:elimuraya-dev/daraja-api.git</developerConnection>
     </scm>
+
+    <!-- We are deploying to Sonatype, so enter Sonatype Distribution Stuff Here -->
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
@@ -76,37 +89,37 @@
             <artifactId>javax.inject</artifactId>
             <version>1</version>
         </dependency>
-
-
     </dependencies>
 
-    <build>
-        <plugins>
-            <!--            NEXUS PLUGIN -->
-            <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.8</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <serverId>ossrh</serverId>
-                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
     <profiles>
         <profile>
             <id>release</id>
-            <distributionManagement>
-                <repository>
-                    <id>ossrh</id>
-                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-                </repository>
-            </distributionManagement>
             <build>
                 <plugins>
+
+                    <plugin>
+
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>${maven.javadoc.plugin}</version>
+
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <dependencies>
+                            <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+                            <dependency>
+                                <groupId>org.apache.commons</groupId>
+                                <artifactId>commons-lang3</artifactId>
+                                <version>3.9</version>
+                            </dependency>
+                        </dependencies>
+                    </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
@@ -115,34 +128,15 @@
                             <execution>
                                 <id>attach-sources</id>
                                 <goals>
-                                    <goal>jar-no-fork</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>3.0.1</version>
-                        <executions>
-                            <execution>
-                                <id>attach-javadocs</id>
-                                <goals>
                                     <goal>jar</goal>
                                 </goals>
-                                <configuration> <!-- add this to disable checking -->
-                                    <additionalJOption>-Xdoclint:none</additionalJOption>
-                                </configuration>
                             </execution>
                         </executions>
-
-
                     </plugin>
-                    <!--                    for sigining purposes -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.5</version>
+                        <version>1.6</version>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
@@ -152,6 +146,17 @@
                                 </goals>
                             </execution>
                         </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <version>1.6.8</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <serverId>ossrh</serverId>
+                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>

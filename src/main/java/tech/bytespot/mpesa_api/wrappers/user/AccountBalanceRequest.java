@@ -9,7 +9,7 @@ public class AccountBalanceRequest {
     private String identifierType;
     private String comment;
 
-    public AccountBalanceRequest() {
+    private AccountBalanceRequest() {
     }
 
     public String getIdentifierType() {

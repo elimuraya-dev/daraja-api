@@ -26,17 +26,12 @@ public class STK_Response {
     @JsonProperty("ResultCode")
     private String resultCode;
 
+    @JsonProperty("CustomerMessage")
+    private String customerMessage;
+
     public STK_Response() {
     }
 
-    public STK_Response(String merchantRequestID, String checkoutRequestID, String responseCode, String resultDesc, String responseDescription, String resultCode) {
-        this.merchantRequestID = merchantRequestID;
-        this.checkoutRequestID = checkoutRequestID;
-        this.responseCode = responseCode;
-        this.resultDesc = resultDesc;
-        this.responseDescription = responseDescription;
-        this.resultCode = resultCode;
-    }
 
     public String getMerchantRequestID() {
         return merchantRequestID;
@@ -84,5 +79,13 @@ public class STK_Response {
 
     public void setResultCode(String resultCode) {
         this.resultCode = resultCode;
+    }
+
+    public String getCustomerMessage() {
+        return customerMessage;
+    }
+
+    public void setCustomerMessage(String customerMessage) {
+        this.customerMessage = customerMessage;
     }
 }

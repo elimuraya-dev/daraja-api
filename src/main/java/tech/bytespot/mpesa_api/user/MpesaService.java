@@ -25,7 +25,6 @@ import java.util.Map;
  *
  * @author eli_muraya on 16/10/2019 .
  */
-@Singleton
 public class MpesaService implements MpesaServiceTemplate {
   private  ProcessorService processorService;
   private  MpesaHelpers mpesaHelpers;

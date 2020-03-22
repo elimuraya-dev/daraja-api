@@ -1,7 +1,6 @@
 package tech.bytespot.mpesa_api.services;
 
 
-
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -124,7 +123,7 @@ public class MpesaHelpers {
       System.out.println("MPESA Response : " + response);
       var callbackResponse = mapper().readValue(response, TokenResponse.class);
       return callbackResponse;
-    } catch ( IOException e) {
+    } catch (IOException e) {
       System.out.println("ERROR GETTING ACCESS TOKEN FROM SAFARICOM");
       e.printStackTrace();
       return new TokenResponse();
@@ -218,59 +217,20 @@ public class MpesaHelpers {
       Response resp = client.newCall(request).execute();
       response = resp.body().string();
       System.out.println("MPESA Response : " + response);
-      var callbackResponse = mapper.readValue(response, responseClass);
-      return callbackResponse;
-    } catch ( IOException e) {
+    } catch (IOException e) {
       e.printStackTrace();
-      return response;
+      throw new MpesaException(e.getMessage());
+    }
+
+    try {
+      Object callbackResponse = new ObjectMapper().readValue(response, responseClass);
+      return callbackResponse;
+    } catch (JsonProcessingException e) {
+      e.printStackTrace();
+      throw new MpesaException(response);
+
     }
   }
-  /**
-   *   public Object httpPostRequest(String url, String accessToken, Object body, Class responseClass) throws MpesaException {
-   *     String jsonInString = body.toString();
-   *
-   *     RequestBody requestBody = RequestBody
-   *             .create(jsonInString, MediaType.parse("application/json"));
-   *
-   *     OkHttpClient client = new OkHttpClient.Builder()
-   *             .connectTimeout(10, TimeUnit.SECONDS)
-   *             .writeTimeout(10, TimeUnit.SECONDS)
-   *             .readTimeout(30, TimeUnit.SECONDS)
-   *             .build();
-   *
-   *     Request request = new Request.Builder()
-   *             .url(url)
-   *             .post(requestBody)
-   *             .header("authorization", "Bearer " + accessToken)
-   *             .header("cache-control", "no-cache")
-   *             .header("content-type", "application/json")
-   *             .header("accept", "application/json")
-   *             .build();
-   *
-   *     System.out.println("MPESA Request : " + jsonInString);
-   *
-   *     String response = "";
-   *     ObjectMapper mapper = new ObjectMapper();
-   *     try {
-   *       Response resp = client.newCall(request).execute();
-   *       response = resp.body().string();
-   *       System.out.println("MPESA Response : " + response);
-   *
-   *       var callbackResponse = mapper.readValue(response, responseClass);
-   *       return callbackResponse;
-   *     } catch (HttpClientResponseException | IOException e) {
-   *       try {
-   *         return mapper.readValue(response, MpesaErrorResponse.class);
-   *       } catch (IOException ex) {
-   *         ex.printStackTrace();
-   *         return response;
-   *       }
-   * //            logger.debug("received body  : " + e.getResponse().getBody(Argument.of(String.class)).get());
-   * //            throw new MpesaException(e.getResponse().getBody(Argument.of(String.class)).get());
-   *     }
-   *   }
-   */
-
 
   /**
    * Function generates password used in STK push request
