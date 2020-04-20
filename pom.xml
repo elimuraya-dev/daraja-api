@@ -6,12 +6,12 @@
 
     <groupId>tech.bytespot</groupId>
     <artifactId>daraja-api</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.4-SNAPSHOT</version>
     <name>Daraja API Library</name>
     <description>This library helps java developers to integrate to MPESA APIs easily and fast.</description>
 
     <properties>
-        <jdk.version>13</jdk.version>
+        <jdk.version>11</jdk.version>
         <maven.javadoc.plugin>3.0.0</maven.javadoc.plugin>
         <maven.compiler.target>${jdk.version}</maven.compiler.target>
         <maven.compiler.source>${jdk.version}</maven.compiler.source>

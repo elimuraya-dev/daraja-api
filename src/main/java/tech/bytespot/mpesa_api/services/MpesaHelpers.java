@@ -13,7 +13,8 @@ import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -104,9 +105,10 @@ public class MpesaHelpers {
     String encoded_key_secret = java.util.Base64.getEncoder().encodeToString(bytes);
 
     OkHttpClient client = new OkHttpClient.Builder()
-            .connectTimeout(10, TimeUnit.SECONDS)
-            .writeTimeout(10, TimeUnit.SECONDS)
-            .readTimeout(30, TimeUnit.SECONDS)
+            .connectTimeout(40, TimeUnit.SECONDS)
+            .writeTimeout(40, TimeUnit.SECONDS)
+            .readTimeout(40, TimeUnit.SECONDS)
+
             .build();
 
     Request request = new Request.Builder()
@@ -120,6 +122,8 @@ public class MpesaHelpers {
     try {
       Response resp = client.newCall(request).execute();
       response = resp.body().string();
+
+      System.out.println("MPESA Response code for token generation : " + resp.code());
       System.out.println("MPESA Response : " + response);
       var callbackResponse = mapper().readValue(response, TokenResponse.class);
       return callbackResponse;
