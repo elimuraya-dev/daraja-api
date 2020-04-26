@@ -1,19 +1,23 @@
 package tech.bytespot.mpesa_api.services;
 
 
+import tech.bytespot.mpesa_api.configurations.HttpConfiguration;
 import tech.bytespot.mpesa_api.configurations.MpesaConfiguration;
 import tech.bytespot.mpesa_api.configurations.MpesaUtils;
+import tech.bytespot.mpesa_api.templates.ProcessorsTemplate;
 import tech.bytespot.mpesa_api.utils.MpesaConstants;
 import tech.bytespot.mpesa_api.utils.MpesaException;
-import tech.bytespot.mpesa_api.templates.ProcessorsTemplate;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Logger;
 
 /**
  * @author eli_muraya on 15/10/2019 .
  */
 public class ProcessorService implements ProcessorsTemplate {
+  private final static Logger LOGGER = Logger.getLogger(ProcessorService.class.getName());
+
 
   private MpesaHelpers mpesaHelpers;
 
@@ -30,7 +34,7 @@ public class ProcessorService implements ProcessorsTemplate {
     fieldsMap.put(MpesaUtils.App_Key_Secret, app_key_secret);
 
     if ((mpesaConfiguration.getAppMode()).equals(MpesaUtils.Test_Mode)) {
-      System.out.println("App in test mode ...");
+      LOGGER.info("App in test mode ...");
       fieldsMap.put(MpesaUtils.URL_for_access_token, MpesaConstants.test_acces_token_url);
       fieldsMap.put(MpesaUtils.URL_for_access_token, MpesaConstants.test_acces_token_url);
       fieldsMap.put(MpesaUtils.URL_for_stkpush_request, MpesaConstants.test_stkpush_url);
@@ -44,7 +48,7 @@ public class ProcessorService implements ProcessorsTemplate {
       fieldsMap.put(MpesaUtils.URL_for_c2b_simulate_request, MpesaConstants.test_c2b_simulate_url);
 
     } else {
-      System.out.println("App in prod mode ...");
+      LOGGER.info("App in prod mode ...");
       fieldsMap.put(MpesaUtils.URL_for_access_token, MpesaConstants.prod_acces_token_url);
       fieldsMap.put(MpesaUtils.URL_for_access_token, MpesaConstants.prod_acces_token_url);
       fieldsMap.put(MpesaUtils.URL_for_stkpush_request, MpesaConstants.prod_stkpush_url);
@@ -60,7 +64,10 @@ public class ProcessorService implements ProcessorsTemplate {
     }
     var tokenUrl = (String) fieldsMap.get(MpesaUtils.URL_for_access_token);
     var appKeySecret = (String) fieldsMap.get(MpesaUtils.App_Key_Secret);
-    var token = mpesaHelpers.generateAccessToken(appKeySecret, tokenUrl).getAccess_token();
+
+    var http = mpesaConfiguration.getHttpConfiguration() == null ? new HttpConfiguration() :
+            mpesaConfiguration.getHttpConfiguration();
+    var token = mpesaHelpers.generateAccessToken(appKeySecret, tokenUrl, http).getAccess_token();
     fieldsMap.put(MpesaUtils.Access_Token, token);
     return fieldsMap;
   }

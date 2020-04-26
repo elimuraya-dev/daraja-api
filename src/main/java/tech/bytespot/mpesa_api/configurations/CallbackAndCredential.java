@@ -8,6 +8,8 @@ public class CallbackAndCredential {
   private String timeoutUrl;
   private String initiatorName;
   private String initiatorPassword;
+  private String securityCredential;
+
 
   public CallbackAndCredential() {
   }
@@ -17,6 +19,14 @@ public class CallbackAndCredential {
     this.timeoutUrl = timeoutUrl;
     this.initiatorName = initiatorName;
     this.initiatorPassword = initiatorPassword;
+  }
+
+  public CallbackAndCredential(String callbackUrl, String timeoutUrl, String initiatorName, String initiatorPassword, String securityCredential) {
+    this.callbackUrl = callbackUrl;
+    this.timeoutUrl = timeoutUrl;
+    this.initiatorName = initiatorName;
+    this.initiatorPassword = initiatorPassword;
+    this.securityCredential = securityCredential;
   }
 
   public String getCallbackUrl() {
@@ -37,13 +47,18 @@ public class CallbackAndCredential {
     return initiatorPassword;
   }
 
+  public String getSecurityCredential() {
+    return securityCredential;
+  }
 
   @Override
   public String toString() {
-    return "CallbackAndCredential{" +
-            "callbackUrl='" + callbackUrl + '\'' +
-            ", initiatorName='" + initiatorName + '\'' +
-            ", initiatorPassword='" + initiatorPassword + '\'' +
+    return "{" +
+            "callbackUrl : \"" + callbackUrl + "\"" +
+            ", timeoutUrl : \"" + timeoutUrl + "\"" +
+            ", initiatorName : \"" + initiatorName + "\"" +
+            ", initiatorPassword : \"" + initiatorPassword + "\"" +
+            ", securityCredential : \"" + securityCredential + "\"" +
             '}';
   }
 }

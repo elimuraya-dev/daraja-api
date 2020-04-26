@@ -2,18 +2,19 @@ package tech.bytespot.mpesa_api.configurations;
 
 public class MpesaConfiguration {
   private String shortcode;
+  private String shortcode2;
   private String appMode;
   private String appKey;
   private String appSecret;
   private String testMsisdn;
-  private String stkCallback;
-  private String passKey;
+  private StkSettings stk;
   private CallbackAndCredential b2c;
   private CallbackAndCredential b2b;
   private CallbackAndCredential reversal;
   private CallbackAndCredential status;
   private CallbackAndCredential balance;
   private C2B c2b;
+  private HttpConfiguration httpConfiguration;
 
   private MpesaConfiguration() {
   }
@@ -34,16 +35,17 @@ public class MpesaConfiguration {
     return appMode;
   }
 
-  public String getPassKey() {
-    return passKey;
-  }
 
   public String getTestMsisdn() {
     return testMsisdn;
   }
 
-  public String getStkCallback() {
-    return stkCallback;
+  public String getShortcode2() {
+    return shortcode2;
+  }
+
+  public StkSettings getStk() {
+    return stk;
   }
 
   public CallbackAndCredential getB2c() {
@@ -70,24 +72,30 @@ public class MpesaConfiguration {
     return c2b;
   }
 
+  public HttpConfiguration getHttpConfiguration() {
+    return httpConfiguration;
+  }
+
   /**
    * Class builder defination starts here
    */
 
   public static class MpesaConfigurationBuilder {
     private String shortcode;
+    private String shortcode2;
     private String appMode;
     private String appKey;
     private String appSecret;
     private String testMsisdn;
-    private String stkCallback;
-    private String passKey;
+    private StkSettings stk;
     private CallbackAndCredential b2c;
     private CallbackAndCredential b2b;
     private CallbackAndCredential reversal;
     private CallbackAndCredential status;
     private CallbackAndCredential balance;
     private C2B c2b;
+    private HttpConfiguration httpConfiguration;
+
 
     public MpesaConfigurationBuilder() {
     }
@@ -95,6 +103,12 @@ public class MpesaConfiguration {
     // Shortcode to use
     public MpesaConfiguration.MpesaConfigurationBuilder shortcode(String shortcode) {
       this.shortcode = shortcode;
+      return this;
+    }
+
+    // Shortcode to use in sandbox for B2B transactions
+    public MpesaConfiguration.MpesaConfigurationBuilder shortcode2(String shortcode) {
+      this.shortcode2 = shortcode;
       return this;
     }
 
@@ -116,12 +130,6 @@ public class MpesaConfiguration {
       return this;
     }
 
-    // Lipa-na-mpesa passkey
-    public MpesaConfiguration.MpesaConfigurationBuilder withPassKey(String passKey) {
-      this.passKey = passKey;
-      return this;
-    }
-
     // Shortcode test phone number
     public MpesaConfiguration.MpesaConfigurationBuilder withTestMsisdn(String testMsisdn) {
       this.testMsisdn = testMsisdn;
@@ -129,8 +137,8 @@ public class MpesaConfiguration {
     }
 
     // STK Configurations
-    public MpesaConfiguration.MpesaConfigurationBuilder enableSTK(String stkCallback) {
-      this.stkCallback = stkCallback;
+    public MpesaConfiguration.MpesaConfigurationBuilder enableSTK(String lipaNaMpesaShortcode, String passkey, String stkCallback) {
+      this.stk = new StkSettings(lipaNaMpesaShortcode, passkey, stkCallback);
       return this;
     }
 
@@ -147,6 +155,21 @@ public class MpesaConfiguration {
       return this;
     }
 
+    // B2C Configurations, with security credential
+    public MpesaConfiguration.MpesaConfigurationBuilder enableB2C(
+            String callbackUrl,
+            String timeoutUrl,
+            String initiatorName,
+            String initiatorPassword,
+            String securityCredential) {
+      this.b2c = new CallbackAndCredential(callbackUrl,
+              timeoutUrl,
+              initiatorName,
+              initiatorPassword,
+              securityCredential);
+      return this;
+    }
+
     // B2B Configurations
     public MpesaConfiguration.MpesaConfigurationBuilder enableB2B(
             String callbackUrl,
@@ -157,6 +180,21 @@ public class MpesaConfiguration {
               timeoutUrl,
               initiatorName,
               initiatorPassword);
+      return this;
+    }
+
+    // B2B Configurations, with security credential
+    public MpesaConfiguration.MpesaConfigurationBuilder enableB2B(
+            String callbackUrl,
+            String timeoutUrl,
+            String initiatorName,
+            String initiatorPassword,
+            String securityCrdentials) {
+      this.b2b = new CallbackAndCredential(callbackUrl,
+              timeoutUrl,
+              initiatorName,
+              initiatorPassword,
+              securityCrdentials);
       return this;
     }
 
@@ -173,6 +211,21 @@ public class MpesaConfiguration {
       return this;
     }
 
+    // Reversal Configurations, with security credentials
+    public MpesaConfiguration.MpesaConfigurationBuilder enableReversal(
+            String callbackUrl,
+            String timeoutUrl,
+            String initiatorName,
+            String initiatorPassword,
+            String securityCredentials) {
+      this.reversal = new CallbackAndCredential(callbackUrl,
+              timeoutUrl,
+              initiatorName,
+              initiatorPassword,
+              securityCredentials);
+      return this;
+    }
+
     // Transaction Status Configurations
     public MpesaConfiguration.MpesaConfigurationBuilder enableStatusCheck(
             String callbackUrl,
@@ -183,6 +236,21 @@ public class MpesaConfiguration {
               timeoutUrl,
               initiatorName,
               initiatorPassword);
+      return this;
+    }
+
+    // Transaction Status Configurations, with security credential
+    public MpesaConfiguration.MpesaConfigurationBuilder enableStatusCheck(
+            String callbackUrl,
+            String timeoutUrl,
+            String initiatorName,
+            String initiatorPassword,
+            String securityCredentials) {
+      this.status = new CallbackAndCredential(callbackUrl,
+              timeoutUrl,
+              initiatorName,
+              initiatorPassword,
+              securityCredentials);
       return this;
     }
 
@@ -200,6 +268,21 @@ public class MpesaConfiguration {
       return this;
     }
 
+    // Balance check Configurations, with security credentials
+    public MpesaConfiguration.MpesaConfigurationBuilder enableBalanceCheck(
+            String callbackUrl,
+            String timeoutUrl,
+            String initiatorName,
+            String initiatorPassword,
+            String securityCredentials) {
+      this.balance = new CallbackAndCredential(callbackUrl,
+              timeoutUrl,
+              initiatorName,
+              initiatorPassword,
+              securityCredentials);
+      return this;
+    }
+
     // C2B Configurations
     public MpesaConfiguration.MpesaConfigurationBuilder enableC2B(
             String validationUrl,
@@ -210,21 +293,29 @@ public class MpesaConfiguration {
       return this;
     }
 
+    // Configure HTTP timeouts
+    public MpesaConfiguration.MpesaConfigurationBuilder setHttpTimeouts(Integer connectionTimeout,
+                                                                        Integer readTimeout) {
+      this.httpConfiguration = new HttpConfiguration(connectionTimeout, readTimeout);
+      return this;
+    }
+
     public MpesaConfiguration build() {
       MpesaConfiguration config = new MpesaConfiguration();
       config.shortcode = this.shortcode;
+      config.shortcode2 = this.shortcode2;
       config.appMode = this.appMode;
       config.appKey = this.appKey;
       config.appSecret = this.appSecret;
       config.testMsisdn = this.testMsisdn;
-      config.stkCallback = this.stkCallback;
-      config.passKey = this.passKey;
+      config.stk = this.stk;
       config.b2c = this.b2c;
       config.b2b = this.b2b;
       config.reversal = this.reversal;
       config.status = this.status;
       config.balance = this.balance;
       config.c2b = this.c2b;
+      config.httpConfiguration = this.httpConfiguration;
       return config;
     }
 

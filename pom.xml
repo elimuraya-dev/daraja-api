@@ -6,7 +6,7 @@
 
     <groupId>tech.bytespot</groupId>
     <artifactId>daraja-api</artifactId>
-    <version>1.0.4-SNAPSHOT</version>
+    <version>1.0.5-SNAPSHOT</version>
     <name>Daraja API Library</name>
     <description>This library helps java developers to integrate to MPESA APIs easily and fast.</description>
 
@@ -89,6 +89,14 @@
             <artifactId>javax.inject</artifactId>
             <version>1</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.6.2</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <profiles>
