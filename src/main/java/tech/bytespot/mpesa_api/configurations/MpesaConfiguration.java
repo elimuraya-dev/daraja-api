@@ -1,5 +1,7 @@
 package tech.bytespot.mpesa_api.configurations;
 
+import java.util.concurrent.TimeUnit;
+
 public class MpesaConfiguration {
   private String shortcode;
   private String shortcode2;
@@ -7,6 +9,8 @@ public class MpesaConfiguration {
   private String appKey;
   private String appSecret;
   private String testMsisdn;
+  private String minimumBalance;
+
   private StkSettings stk;
   private CallbackAndCredential b2c;
   private CallbackAndCredential b2b;
@@ -42,6 +46,10 @@ public class MpesaConfiguration {
 
   public String getShortcode2() {
     return shortcode2;
+  }
+
+  public String getMinimumBalance() {
+    return minimumBalance;
   }
 
   public StkSettings getStk() {
@@ -87,6 +95,8 @@ public class MpesaConfiguration {
     private String appKey;
     private String appSecret;
     private String testMsisdn;
+    private String minimumBalance;
+
     private StkSettings stk;
     private CallbackAndCredential b2c;
     private CallbackAndCredential b2b;
@@ -133,6 +143,12 @@ public class MpesaConfiguration {
     // Shortcode test phone number
     public MpesaConfiguration.MpesaConfigurationBuilder withTestMsisdn(String testMsisdn) {
       this.testMsisdn = testMsisdn;
+      return this;
+    }
+
+    // Set warning paybill balance
+    public MpesaConfiguration.MpesaConfigurationBuilder setWarningBalance(String minimumBalance) {
+      this.minimumBalance = minimumBalance;
       return this;
     }
 
@@ -295,8 +311,8 @@ public class MpesaConfiguration {
 
     // Configure HTTP timeouts
     public MpesaConfiguration.MpesaConfigurationBuilder setHttpTimeouts(Integer connectionTimeout,
-                                                                        Integer readTimeout) {
-      this.httpConfiguration = new HttpConfiguration(connectionTimeout, readTimeout);
+                                                                        Integer readTimeout, TimeUnit timeUnit) {
+      this.httpConfiguration = new HttpConfiguration(connectionTimeout, readTimeout, timeUnit);
       return this;
     }
 
@@ -308,6 +324,7 @@ public class MpesaConfiguration {
       config.appKey = this.appKey;
       config.appSecret = this.appSecret;
       config.testMsisdn = this.testMsisdn;
+      config.minimumBalance = this.minimumBalance;
       config.stk = this.stk;
       config.b2c = this.b2c;
       config.b2b = this.b2b;

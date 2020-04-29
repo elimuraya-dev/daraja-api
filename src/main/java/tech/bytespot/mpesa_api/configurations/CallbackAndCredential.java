@@ -47,6 +47,10 @@ public class CallbackAndCredential {
     return initiatorPassword;
   }
 
+  public void setSecurityCredential(String securityCredential) {
+    this.securityCredential = securityCredential;
+  }
+
   public String getSecurityCredential() {
     return securityCredential;
   }

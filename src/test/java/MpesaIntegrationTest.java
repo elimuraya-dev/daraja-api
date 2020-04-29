@@ -9,6 +9,7 @@ import tech.bytespot.mpesa_api.utils.core.Commands;
 import tech.bytespot.mpesa_api.utils.core.Identifiers;
 import tech.bytespot.mpesa_api.wrappers.user.*;
 
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 public class MpesaIntegrationTest {
@@ -61,7 +62,7 @@ public class MpesaIntegrationTest {
                   initiatorName,
                   initiatorPassword,
                   securityCredential
-          ).setHttpTimeouts(15, 15)
+          ).setHttpTimeouts(15, 15, TimeUnit.SECONDS)
           .build();
 
   MpesaConfiguration payOutMpesaConfiguration = MpesaConfiguration.builder()
@@ -92,7 +93,7 @@ public class MpesaIntegrationTest {
                   initiatorName,
                   initiatorPassword,
                   securityCredential
-          ).setHttpTimeouts(15, 15)
+          ).setHttpTimeouts(15, 15, TimeUnit.SECONDS)
           .build();
 
   @Test
@@ -193,6 +194,8 @@ public class MpesaIntegrationTest {
             .withCommandId(Commands.BusinessPayBill)
             .withComment(testComment)
             .build();
+
+    payOutMpesaConfiguration.getB2b().setSecurityCredential(null);
     var response = mpesaService.b2bRequest(request, payOutMpesaConfiguration);
     Assertions.assertTrue(response.getResponseCode().equals("0"), response.getResponseDescription());
   }

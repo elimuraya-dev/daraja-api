@@ -151,9 +151,11 @@ public class MpesaHelpers {
   public Object httpPostRequest(String url, String accessToken, Object body, Class responseClass, HttpConfiguration httpConfiguration) throws MpesaException {
     Integer connectionTimeout = 10;
     Integer readTimeout = 10;
+    TimeUnit timeUnit = TimeUnit.SECONDS;
     if (httpConfiguration.getConnectionTimeout() != null) {
       connectionTimeout = httpConfiguration.getConnectionTimeout();
       readTimeout = httpConfiguration.getReadTimeout();
+      timeUnit = httpConfiguration.getTimeUnit();
     } else {
       LOGGER.info("Http Configurations not found, using Defaults...");
     }
@@ -172,8 +174,8 @@ public class MpesaHelpers {
 
 
     OkHttpClient client = new OkHttpClient.Builder()
-            .connectTimeout(connectionTimeout, TimeUnit.SECONDS)
-            .readTimeout(readTimeout, TimeUnit.SECONDS)
+            .connectTimeout(connectionTimeout, timeUnit)
+            .readTimeout(readTimeout, timeUnit)
             .build();
 
     Request request = new Request.Builder()
