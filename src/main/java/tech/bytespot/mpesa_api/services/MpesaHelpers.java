@@ -5,6 +5,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import okhttp3.*;
+import tech.bytespot.mpesa_api.configurations.HttpConfiguration;
 import tech.bytespot.mpesa_api.utils.MpesaException;
 import tech.bytespot.mpesa_api.wrappers.base.simples.Password;
 import tech.bytespot.mpesa_api.wrappers.responses.TokenResponse;
@@ -13,7 +14,8 @@ import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -26,6 +28,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Logger;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
@@ -34,6 +37,9 @@ import static java.nio.charset.StandardCharsets.UTF_8;
  */
 
 public class MpesaHelpers {
+
+  private final static Logger LOGGER = Logger.getLogger(MpesaHelpers.class.getName());
+
   public MpesaHelpers() {
   }
 
@@ -48,7 +54,7 @@ public class MpesaHelpers {
   public String encryptInitiatorPassword(String password, String certificateName) throws MpesaException {
     String encryptedPassword;
     try {
-      System.out.println("Using mpesa certificate  : " + certificateName);
+      LOGGER.info("Using mpesa certificate  : " + certificateName);
       byte[] input = password.getBytes(UTF_8);
       InputStream fin = getClass()
               .getClassLoader()
@@ -64,9 +70,6 @@ public class MpesaHelpers {
       byte[] cipherText = cipher.doFinal(input);
       // Convert the resulting encrypted byte array into a string using base64 encoding
       encryptedPassword = java.util.Base64.getEncoder().encodeToString(cipherText);
-
-      System.out.println("password : " + encryptedPassword);
-
       return encryptedPassword;
     } catch (NoSuchAlgorithmException ex) {
       ex.printStackTrace();
@@ -99,14 +102,18 @@ public class MpesaHelpers {
    * @param app_key_secret
    * @return
    */
-  public TokenResponse generateAccessToken(String app_key_secret, String url) {
+  public TokenResponse generateAccessToken(String app_key_secret, String url, HttpConfiguration httpConfiguration) throws MpesaException {
+    Integer connectionTimeout = (httpConfiguration.getConnectionTimeout() == null) ? 10 :
+            httpConfiguration.getConnectionTimeout();
+    Integer readTimeout = (httpConfiguration.getReadTimeout() == null) ? 10 :
+            httpConfiguration.getReadTimeout();
+
     byte[] bytes = app_key_secret.getBytes(StandardCharsets.ISO_8859_1);
     String encoded_key_secret = java.util.Base64.getEncoder().encodeToString(bytes);
 
     OkHttpClient client = new OkHttpClient.Builder()
-            .connectTimeout(10, TimeUnit.SECONDS)
-            .writeTimeout(10, TimeUnit.SECONDS)
-            .readTimeout(30, TimeUnit.SECONDS)
+            .connectTimeout(connectionTimeout, TimeUnit.SECONDS)
+            .readTimeout(readTimeout, TimeUnit.SECONDS)
             .build();
 
     Request request = new Request.Builder()
@@ -120,13 +127,84 @@ public class MpesaHelpers {
     try {
       Response resp = client.newCall(request).execute();
       response = resp.body().string();
-      System.out.println("MPESA Response : " + response);
+
+      LOGGER.info("MPESA Response code for token generation : " + resp.code());
+      LOGGER.info(response);
       var callbackResponse = mapper().readValue(response, TokenResponse.class);
       return callbackResponse;
     } catch (IOException e) {
-      System.out.println("ERROR GETTING ACCESS TOKEN FROM SAFARICOM");
       e.printStackTrace();
-      return new TokenResponse();
+      LOGGER.info(e.getMessage());
+      throw new MpesaException("ERROR GETTING ACCESS TOKEN FROM SAFARICOM");
+    }
+  }
+
+  /**
+   * Generic function for sending POST HTTP requests
+   *
+   * @param url
+   * @param accessToken
+   * @param body
+   * @param responseClass
+   * @return
+   */
+  public Object httpPostRequest(String url, String accessToken, Object body, Class responseClass, HttpConfiguration httpConfiguration) throws MpesaException {
+    Integer connectionTimeout = 10;
+    Integer readTimeout = 10;
+    TimeUnit timeUnit = TimeUnit.SECONDS;
+    if (httpConfiguration.getConnectionTimeout() != null) {
+      connectionTimeout = httpConfiguration.getConnectionTimeout();
+      readTimeout = httpConfiguration.getReadTimeout();
+      timeUnit = httpConfiguration.getTimeUnit();
+    } else {
+      LOGGER.info("Http Configurations not found, using Defaults...");
+    }
+
+    ObjectMapper mapper = mapper();
+    String jsonString = null;
+    try {
+      jsonString = mapper.writeValueAsString(body);
+    } catch (JsonProcessingException e) {
+      e.printStackTrace();
+      throw new MpesaException(e.getMessage());
+    }
+
+    RequestBody requestBody = RequestBody
+            .create(MediaType.parse("application/json"), jsonString);
+
+
+    OkHttpClient client = new OkHttpClient.Builder()
+            .connectTimeout(connectionTimeout, timeUnit)
+            .readTimeout(readTimeout, timeUnit)
+            .build();
+
+    Request request = new Request.Builder()
+            .url(url)
+            .post(requestBody)
+            .header("authorization", "Bearer " + accessToken)
+            .header("cache-control", "no-cache")
+            .header("content-type", "application/json")
+            .header("accept", "application/json")
+            .build();
+
+    LOGGER.info("MPESA Request : " + jsonString);
+    String response = "";
+    try {
+      Response resp = client.newCall(request).execute();
+      response = resp.body().string();
+      LOGGER.info("MPESA Response : " + response);
+    } catch (IOException e) {
+      e.printStackTrace();
+      throw new MpesaException(e.getMessage());
+    }
+
+    try {
+      Object callbackResponse = new ObjectMapper().readValue(response, responseClass);
+      return callbackResponse;
+    } catch (JsonProcessingException e) {
+      e.printStackTrace();
+      throw new MpesaException(response);
+
     }
   }
 
@@ -174,63 +252,6 @@ public class MpesaHelpers {
     return responseCodes;
   }
 
-  /**
-   * Generic function for sending POST HTTP requests
-   *
-   * @param url
-   * @param accessToken
-   * @param body
-   * @param responseClass
-   * @return
-   */
-  public Object httpPostRequest(String url, String accessToken, Object body, Class responseClass) throws MpesaException {
-    ObjectMapper mapper = mapper();
-    String jsonString = null;
-    try {
-      jsonString = mapper.writeValueAsString(body);
-    } catch (JsonProcessingException e) {
-      e.printStackTrace();
-      throw new MpesaException(e.getMessage());
-    }
-
-    RequestBody requestBody = RequestBody
-            .create(MediaType.parse("application/json"), jsonString);
-
-    OkHttpClient client = new OkHttpClient.Builder()
-            .connectTimeout(10, TimeUnit.SECONDS)
-            .writeTimeout(10, TimeUnit.SECONDS)
-            .readTimeout(30, TimeUnit.SECONDS)
-            .build();
-
-    Request request = new Request.Builder()
-            .url(url)
-            .post(requestBody)
-            .header("authorization", "Bearer " + accessToken)
-            .header("cache-control", "no-cache")
-            .header("content-type", "application/json")
-            .header("accept", "application/json")
-            .build();
-
-    System.out.println("MPESA Request : " + jsonString);
-    String response = "";
-    try {
-      Response resp = client.newCall(request).execute();
-      response = resp.body().string();
-      System.out.println("MPESA Response : " + response);
-    } catch (IOException e) {
-      e.printStackTrace();
-      throw new MpesaException(e.getMessage());
-    }
-
-    try {
-      Object callbackResponse = new ObjectMapper().readValue(response, responseClass);
-      return callbackResponse;
-    } catch (JsonProcessingException e) {
-      e.printStackTrace();
-      throw new MpesaException(response);
-
-    }
-  }
 
   /**
    * Function generates password used in STK push request

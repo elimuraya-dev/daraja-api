@@ -33,17 +33,17 @@ public class MpesaConstants {
     public static String prod_transaction_status_url = "https://api.safaricom.co.ke/mpesa/transactionstatus/v1/query";
     public static String prod_balance_url = "https://api.safaricom.co.ke/mpesa/accountbalance/v1/query";
     public static String prod_c2b_register_url = "https://api.safaricom.co.ke/mpesa/c2b/v1/registerurl";
-    public static String prod_c2b_simulate_url = "https://api.safaricom.co.ke/mpesa/c2b/v1/simulate";
+  public static String prod_c2b_simulate_url = "https://api.safaricom.co.ke/mpesa/c2b/v1/simulate";
 
-    /**
-     * APP variables
-     */
-    public static String SANDBOX_PK = "sandbox.cer";
-    public static String PRODUCTION_PK = "production.cer";
+  /**
+   * APP variables
+   */
+  public static String SANDBOX_PK = "sandbox.cer";
+  public static String PRODUCTION_PK = "production.cer";
 
-    public static String TransactionType_CustomerPayBillOnline = "CustomerPayBillOnline";
-    public static String ResponseType_Completed = "Completed";
-
+  public static String TransactionType_CustomerPayBillOnline = "CustomerPayBillOnline";
+  public static String ResponseType_Completed = "Completed";
+  public static String ResponseType_Cancelled = "Cancelled";
 
 
 }
