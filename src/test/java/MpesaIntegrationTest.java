@@ -15,10 +15,10 @@ import java.util.logging.Logger;
 public class MpesaIntegrationTest {
   private final static Logger LOGGER = Logger.getLogger(MpesaIntegrationTest.class.getName());
   MpesaService mpesaService = new MpesaService();
-  String appKey = "BBbSKKSqLqGRdd3RHmTg3w6wvbrFvkou";
-  String appSecret = "KJSIjItCBbIrT809";
+  String appKey = System.getenv("TEST_APPKEY");
+  String appSecret = System.getenv("TEST_APPSECRET");
 
-  String testMsisdn = "254704420756";
+  String testMsisdn = System.getenv("TEST_PHONE_NO");
   String teststkTransactionId = "ws_CO_260420202021051947";
   String testStkAmount = "1";
   String testB2CAmount = "10";
@@ -30,10 +30,11 @@ public class MpesaIntegrationTest {
   String testComment = "TEST COMMENT";
   String testOccasion = "TEST OCCASION";
 
-  String baseUrl = "https://bflkbkljjkhqjkrhubfkbvlksjbr.ngrok.io/";
-  String initiatorName = "apitest468";
-  String initiatorPassword = "Safaricom111!!";
-  String securityCredential = "hWWso6a0/+iqDbBaMwwF4bmcYC2irhDTEClglJVetsCwK2QdoV/kzDKLuSwO7zorz/VAGbayQ+MXV7foZ6wfs///5/Nq1KOLOcItfd6k/5jWQzXR4CN58yfcLIoJAOGGjvDEii13/TaJ9b37Wjt23h1yyDumLHnQYbUIc89VdcK9UgrOcaAKSBkp+7S8LSCx0qSSba0PmPq9Q/XjZqyD6uhJpMsQMWSyj5/ghdlHo6Cn5v0daTGdO5fGymsbQejGSTm6Bd9LGzRK8wfvFq+nmp7mRyfes/RfoF5RKMZ4a234TXQHDDc3le2LLbyVXdUISY07vZ9QJEdoU+uwhreCbQ==";
+  String baseUrl = System.getenv("TEST_BASE_URL");
+  String initiatorName = System.getenv("TEST_INITIATOR_NAME");
+  String initiatorPassword = System.getenv("TEST_INITIATOR_PASSWORD");
+  String securityCredential = System.getenv("TEST_SECURITY_CREDENTIAL");
+  String passKey = System.getenv("TEST_PASSKEY");
 
   MpesaConfiguration payinMpesaConfiguration = MpesaConfiguration.builder()
           .shortcode("601468")
@@ -43,7 +44,7 @@ public class MpesaIntegrationTest {
           .withAppSecret(appSecret)
           .withTestMsisdn("254708374149")
           .enableSTK("174379",
-                  "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919",
+                  passKey,
                   baseUrl + "stk")
           .enableC2B(baseUrl + "validation",
                   baseUrl + "confirmation")
