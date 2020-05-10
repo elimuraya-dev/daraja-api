@@ -59,6 +59,10 @@ public class MpesaConfiguration {
     return appAccessToken;
   }
 
+  public void setAppAccessToken(String appAccessToken) {
+    this.appAccessToken = appAccessToken;
+  }
+
   public StkSettings getStk() {
     return stk;
   }

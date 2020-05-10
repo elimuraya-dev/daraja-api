@@ -147,6 +147,59 @@ public class MpesaHelpers {
   }
 
   /**
+   * Overloadding function to generate token.
+   *
+   * @param appKey
+   * @param appSecret
+   * @param url
+   * @param httpConfiguration
+   * @return
+   * @throws MpesaException
+   */
+  public static TokenResponse generateAccessToken(String appKey, String appSecret, String url,
+      HttpConfiguration httpConfiguration) throws MpesaException {
+    var app_key_secret = appKey + ":" + appSecret;
+
+    Integer connectionTimeout = (httpConfiguration.getConnectionTimeout() == null) ? 10 :
+        httpConfiguration.getConnectionTimeout();
+    Integer readTimeout = (httpConfiguration.getReadTimeout() == null) ? 10 :
+        httpConfiguration.getReadTimeout();
+    TimeUnit timeUnit = (httpConfiguration.getTimeUnit() == null) ? TimeUnit.SECONDS :
+        httpConfiguration.getTimeUnit();
+
+    byte[] bytes = app_key_secret.getBytes(StandardCharsets.ISO_8859_1);
+    String encoded_key_secret = java.util.Base64.getEncoder().encodeToString(bytes);
+
+    OkHttpClient client = new OkHttpClient.Builder()
+        .connectTimeout(connectionTimeout, timeUnit)
+        .readTimeout(readTimeout, timeUnit)
+        .writeTimeout(connectionTimeout, timeUnit)
+        .build();
+
+    Request request = new Request.Builder()
+        .url(url)
+        .get()
+        .header("authorization", "Basic " + encoded_key_secret)
+        .header("cache-control", "no-cache")
+        .build();
+
+    String response = "";
+    try {
+      Response resp = client.newCall(request).execute();
+      response = resp.body().string();
+
+      LOGGER.info("MPESA Response code for token generation : " + resp.code());
+      LOGGER.info(response);
+      var callbackResponse = mapper().readValue(response, TokenResponse.class);
+      return callbackResponse;
+    } catch (IOException e) {
+      e.printStackTrace();
+      LOGGER.info(e.getMessage());
+      throw new MpesaException("ERROR GETTING ACCESS TOKEN FROM SAFARICOM");
+    }
+  }
+
+  /**
    * Generic function for sending POST HTTP requests
    *
    * @param url
