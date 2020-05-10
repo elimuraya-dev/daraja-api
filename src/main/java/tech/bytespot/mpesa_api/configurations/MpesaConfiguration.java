@@ -3,6 +3,7 @@ package tech.bytespot.mpesa_api.configurations;
 import java.util.concurrent.TimeUnit;
 
 public class MpesaConfiguration {
+
   private String shortcode;
   private String shortcode2;
   private String appMode;
@@ -10,6 +11,8 @@ public class MpesaConfiguration {
   private String appSecret;
   private String testMsisdn;
   private String minimumBalance;
+  private String appAccessToken;
+
 
   private StkSettings stk;
   private CallbackAndCredential b2c;
@@ -52,6 +55,14 @@ public class MpesaConfiguration {
     return minimumBalance;
   }
 
+  public String getAppAccessToken() {
+    return appAccessToken;
+  }
+
+  public void setAppAccessToken(String appAccessToken) {
+    this.appAccessToken = appAccessToken;
+  }
+
   public StkSettings getStk() {
     return stk;
   }
@@ -89,6 +100,7 @@ public class MpesaConfiguration {
    */
 
   public static class MpesaConfigurationBuilder {
+
     private String shortcode;
     private String shortcode2;
     private String appMode;
@@ -96,6 +108,8 @@ public class MpesaConfiguration {
     private String appSecret;
     private String testMsisdn;
     private String minimumBalance;
+    private String appAccessToken;
+
 
     private StkSettings stk;
     private CallbackAndCredential b2c;
@@ -152,166 +166,173 @@ public class MpesaConfiguration {
       return this;
     }
 
+    // Set access token
+    public MpesaConfiguration.MpesaConfigurationBuilder setAccessToken(String accessToken) {
+      this.appAccessToken = accessToken;
+      return this;
+    }
+
     // STK Configurations
-    public MpesaConfiguration.MpesaConfigurationBuilder enableSTK(String lipaNaMpesaShortcode, String passkey, String stkCallback) {
+    public MpesaConfiguration.MpesaConfigurationBuilder enableSTK(String lipaNaMpesaShortcode,
+        String passkey, String stkCallback) {
       this.stk = new StkSettings(lipaNaMpesaShortcode, passkey, stkCallback);
       return this;
     }
 
     // B2C Configurations
     public MpesaConfiguration.MpesaConfigurationBuilder enableB2C(
-            String callbackUrl,
-            String timeoutUrl,
-            String initiatorName,
-            String initiatorPassword) {
+        String callbackUrl,
+        String timeoutUrl,
+        String initiatorName,
+        String initiatorPassword) {
       this.b2c = new CallbackAndCredential(callbackUrl,
-              timeoutUrl,
-              initiatorName,
-              initiatorPassword);
+          timeoutUrl,
+          initiatorName,
+          initiatorPassword);
       return this;
     }
 
     // B2C Configurations, with security credential
     public MpesaConfiguration.MpesaConfigurationBuilder enableB2C(
-            String callbackUrl,
-            String timeoutUrl,
-            String initiatorName,
-            String initiatorPassword,
-            String securityCredential) {
+        String callbackUrl,
+        String timeoutUrl,
+        String initiatorName,
+        String initiatorPassword,
+        String securityCredential) {
       this.b2c = new CallbackAndCredential(callbackUrl,
-              timeoutUrl,
-              initiatorName,
-              initiatorPassword,
-              securityCredential);
+          timeoutUrl,
+          initiatorName,
+          initiatorPassword,
+          securityCredential);
       return this;
     }
 
     // B2B Configurations
     public MpesaConfiguration.MpesaConfigurationBuilder enableB2B(
-            String callbackUrl,
-            String timeoutUrl,
-            String initiatorName,
-            String initiatorPassword) {
+        String callbackUrl,
+        String timeoutUrl,
+        String initiatorName,
+        String initiatorPassword) {
       this.b2b = new CallbackAndCredential(callbackUrl,
-              timeoutUrl,
-              initiatorName,
-              initiatorPassword);
+          timeoutUrl,
+          initiatorName,
+          initiatorPassword);
       return this;
     }
 
     // B2B Configurations, with security credential
     public MpesaConfiguration.MpesaConfigurationBuilder enableB2B(
-            String callbackUrl,
-            String timeoutUrl,
-            String initiatorName,
-            String initiatorPassword,
-            String securityCrdentials) {
+        String callbackUrl,
+        String timeoutUrl,
+        String initiatorName,
+        String initiatorPassword,
+        String securityCrdentials) {
       this.b2b = new CallbackAndCredential(callbackUrl,
-              timeoutUrl,
-              initiatorName,
-              initiatorPassword,
-              securityCrdentials);
+          timeoutUrl,
+          initiatorName,
+          initiatorPassword,
+          securityCrdentials);
       return this;
     }
 
     // Reversal Configurations
     public MpesaConfiguration.MpesaConfigurationBuilder enableReversal(
-            String callbackUrl,
-            String timeoutUrl,
-            String initiatorName,
-            String initiatorPassword) {
+        String callbackUrl,
+        String timeoutUrl,
+        String initiatorName,
+        String initiatorPassword) {
       this.reversal = new CallbackAndCredential(callbackUrl,
-              timeoutUrl,
-              initiatorName,
-              initiatorPassword);
+          timeoutUrl,
+          initiatorName,
+          initiatorPassword);
       return this;
     }
 
     // Reversal Configurations, with security credentials
     public MpesaConfiguration.MpesaConfigurationBuilder enableReversal(
-            String callbackUrl,
-            String timeoutUrl,
-            String initiatorName,
-            String initiatorPassword,
-            String securityCredentials) {
+        String callbackUrl,
+        String timeoutUrl,
+        String initiatorName,
+        String initiatorPassword,
+        String securityCredentials) {
       this.reversal = new CallbackAndCredential(callbackUrl,
-              timeoutUrl,
-              initiatorName,
-              initiatorPassword,
-              securityCredentials);
+          timeoutUrl,
+          initiatorName,
+          initiatorPassword,
+          securityCredentials);
       return this;
     }
 
     // Transaction Status Configurations
     public MpesaConfiguration.MpesaConfigurationBuilder enableStatusCheck(
-            String callbackUrl,
-            String timeoutUrl,
-            String initiatorName,
-            String initiatorPassword) {
+        String callbackUrl,
+        String timeoutUrl,
+        String initiatorName,
+        String initiatorPassword) {
       this.status = new CallbackAndCredential(callbackUrl,
-              timeoutUrl,
-              initiatorName,
-              initiatorPassword);
+          timeoutUrl,
+          initiatorName,
+          initiatorPassword);
       return this;
     }
 
     // Transaction Status Configurations, with security credential
     public MpesaConfiguration.MpesaConfigurationBuilder enableStatusCheck(
-            String callbackUrl,
-            String timeoutUrl,
-            String initiatorName,
-            String initiatorPassword,
-            String securityCredentials) {
+        String callbackUrl,
+        String timeoutUrl,
+        String initiatorName,
+        String initiatorPassword,
+        String securityCredentials) {
       this.status = new CallbackAndCredential(callbackUrl,
-              timeoutUrl,
-              initiatorName,
-              initiatorPassword,
-              securityCredentials);
+          timeoutUrl,
+          initiatorName,
+          initiatorPassword,
+          securityCredentials);
       return this;
     }
 
 
     // Balance check Configurations
     public MpesaConfiguration.MpesaConfigurationBuilder enableBalanceCheck(
-            String callbackUrl,
-            String timeoutUrl,
-            String initiatorName,
-            String initiatorPassword) {
+        String callbackUrl,
+        String timeoutUrl,
+        String initiatorName,
+        String initiatorPassword) {
       this.balance = new CallbackAndCredential(callbackUrl,
-              timeoutUrl,
-              initiatorName,
-              initiatorPassword);
+          timeoutUrl,
+          initiatorName,
+          initiatorPassword);
       return this;
     }
 
     // Balance check Configurations, with security credentials
     public MpesaConfiguration.MpesaConfigurationBuilder enableBalanceCheck(
-            String callbackUrl,
-            String timeoutUrl,
-            String initiatorName,
-            String initiatorPassword,
-            String securityCredentials) {
+        String callbackUrl,
+        String timeoutUrl,
+        String initiatorName,
+        String initiatorPassword,
+        String securityCredentials) {
       this.balance = new CallbackAndCredential(callbackUrl,
-              timeoutUrl,
-              initiatorName,
-              initiatorPassword,
-              securityCredentials);
+          timeoutUrl,
+          initiatorName,
+          initiatorPassword,
+          securityCredentials);
       return this;
     }
 
     // C2B Configurations
     public MpesaConfiguration.MpesaConfigurationBuilder enableC2B(
-            String validationUrl,
-            String confirmationUrl) {
+        String validationUrl,
+        String confirmationUrl) {
       this.c2b = new C2B(
-              validationUrl,
-              confirmationUrl);
+          validationUrl,
+          confirmationUrl);
       return this;
     }
 
     // Configure HTTP timeouts
     public MpesaConfiguration.MpesaConfigurationBuilder setHttpTimeouts(Integer connectionTimeout,
-                                                                        Integer readTimeout, TimeUnit timeUnit) {
+        Integer readTimeout, TimeUnit timeUnit) {
       this.httpConfiguration = new HttpConfiguration(connectionTimeout, readTimeout, timeUnit);
       return this;
     }
@@ -325,6 +346,7 @@ public class MpesaConfiguration {
       config.appSecret = this.appSecret;
       config.testMsisdn = this.testMsisdn;
       config.minimumBalance = this.minimumBalance;
+      config.appAccessToken = this.appAccessToken;
       config.stk = this.stk;
       config.b2c = this.b2c;
       config.b2b = this.b2b;

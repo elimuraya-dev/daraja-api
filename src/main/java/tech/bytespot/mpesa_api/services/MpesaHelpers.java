@@ -1,19 +1,11 @@
 package tech.bytespot.mpesa_api.services;
 
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import okhttp3.*;
-import tech.bytespot.mpesa_api.configurations.HttpConfiguration;
-import tech.bytespot.mpesa_api.utils.MpesaException;
-import tech.bytespot.mpesa_api.wrappers.base.simples.Password;
-import tech.bytespot.mpesa_api.wrappers.responses.TokenResponse;
-
-import javax.crypto.BadPaddingException;
-import javax.crypto.Cipher;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
@@ -29,8 +21,19 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
-
-import static java.nio.charset.StandardCharsets.UTF_8;
+import javax.crypto.BadPaddingException;
+import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+import tech.bytespot.mpesa_api.configurations.HttpConfiguration;
+import tech.bytespot.mpesa_api.utils.MpesaException;
+import tech.bytespot.mpesa_api.wrappers.base.simples.Password;
+import tech.bytespot.mpesa_api.wrappers.responses.TokenResponse;
 
 /**
  * @author eli_muraya on 09/10/2019 .
@@ -45,20 +48,20 @@ public class MpesaHelpers {
 
 
   /**
-   * Function encrypts  initiator password
-   * * @param certificateName
+   * Function encrypts  initiator password * @param certificateName
    *
    * @param password
    * @return encrypted password
    */
-  public String encryptInitiatorPassword(String password, String certificateName) throws MpesaException {
+  public String encryptInitiatorPassword(String password, String certificateName)
+      throws MpesaException {
     String encryptedPassword;
     try {
       LOGGER.info("Using mpesa certificate  : " + certificateName);
       byte[] input = password.getBytes(UTF_8);
       InputStream fin = getClass()
-              .getClassLoader()
-              .getResourceAsStream(certificateName);
+          .getClassLoader()
+          .getResourceAsStream(certificateName);
 
       Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
       CertificateFactory cf = CertificateFactory.getInstance("X.509");
@@ -102,26 +105,83 @@ public class MpesaHelpers {
    * @param app_key_secret
    * @return
    */
-  public TokenResponse generateAccessToken(String app_key_secret, String url, HttpConfiguration httpConfiguration) throws MpesaException {
+  public static TokenResponse generateAccessToken(String app_key_secret, String url,
+      HttpConfiguration httpConfiguration) throws MpesaException {
     Integer connectionTimeout = (httpConfiguration.getConnectionTimeout() == null) ? 10 :
-            httpConfiguration.getConnectionTimeout();
+        httpConfiguration.getConnectionTimeout();
     Integer readTimeout = (httpConfiguration.getReadTimeout() == null) ? 10 :
-            httpConfiguration.getReadTimeout();
+        httpConfiguration.getReadTimeout();
+    TimeUnit timeUnit = (httpConfiguration.getTimeUnit() == null) ? TimeUnit.SECONDS :
+        httpConfiguration.getTimeUnit();
 
     byte[] bytes = app_key_secret.getBytes(StandardCharsets.ISO_8859_1);
     String encoded_key_secret = java.util.Base64.getEncoder().encodeToString(bytes);
 
     OkHttpClient client = new OkHttpClient.Builder()
-            .connectTimeout(connectionTimeout, TimeUnit.SECONDS)
-            .readTimeout(readTimeout, TimeUnit.SECONDS)
-            .build();
+        .connectTimeout(connectionTimeout, timeUnit)
+        .readTimeout(readTimeout, timeUnit)
+        .writeTimeout(connectionTimeout, timeUnit)
+        .build();
 
     Request request = new Request.Builder()
-            .url(url)
-            .get()
-            .header("authorization", "Basic " + encoded_key_secret)
-            .header("cache-control", "no-cache")
-            .build();
+        .url(url)
+        .get()
+        .header("authorization", "Basic " + encoded_key_secret)
+        .header("cache-control", "no-cache")
+        .build();
+
+    String response = "";
+    try {
+      Response resp = client.newCall(request).execute();
+      response = resp.body().string();
+
+      LOGGER.info("MPESA Response code for token generation : " + resp.code());
+      LOGGER.info(response);
+      var callbackResponse = mapper().readValue(response, TokenResponse.class);
+      return callbackResponse;
+    } catch (IOException e) {
+      e.printStackTrace();
+      LOGGER.info(e.getMessage());
+      throw new MpesaException("ERROR GETTING ACCESS TOKEN FROM SAFARICOM");
+    }
+  }
+
+  /**
+   * Overloadding function to generate token.
+   *
+   * @param appKey
+   * @param appSecret
+   * @param url
+   * @param httpConfiguration
+   * @return
+   * @throws MpesaException
+   */
+  public static TokenResponse generateAccessToken(String appKey, String appSecret, String url,
+      HttpConfiguration httpConfiguration) throws MpesaException {
+    var app_key_secret = appKey + ":" + appSecret;
+
+    Integer connectionTimeout = (httpConfiguration.getConnectionTimeout() == null) ? 10 :
+        httpConfiguration.getConnectionTimeout();
+    Integer readTimeout = (httpConfiguration.getReadTimeout() == null) ? 10 :
+        httpConfiguration.getReadTimeout();
+    TimeUnit timeUnit = (httpConfiguration.getTimeUnit() == null) ? TimeUnit.SECONDS :
+        httpConfiguration.getTimeUnit();
+
+    byte[] bytes = app_key_secret.getBytes(StandardCharsets.ISO_8859_1);
+    String encoded_key_secret = java.util.Base64.getEncoder().encodeToString(bytes);
+
+    OkHttpClient client = new OkHttpClient.Builder()
+        .connectTimeout(connectionTimeout, timeUnit)
+        .readTimeout(readTimeout, timeUnit)
+        .writeTimeout(connectionTimeout, timeUnit)
+        .build();
+
+    Request request = new Request.Builder()
+        .url(url)
+        .get()
+        .header("authorization", "Basic " + encoded_key_secret)
+        .header("cache-control", "no-cache")
+        .build();
 
     String response = "";
     try {
@@ -148,17 +208,14 @@ public class MpesaHelpers {
    * @param responseClass
    * @return
    */
-  public Object httpPostRequest(String url, String accessToken, Object body, Class responseClass, HttpConfiguration httpConfiguration) throws MpesaException {
-    Integer connectionTimeout = 10;
-    Integer readTimeout = 10;
-    TimeUnit timeUnit = TimeUnit.SECONDS;
-    if (httpConfiguration.getConnectionTimeout() != null) {
-      connectionTimeout = httpConfiguration.getConnectionTimeout();
-      readTimeout = httpConfiguration.getReadTimeout();
-      timeUnit = httpConfiguration.getTimeUnit();
-    } else {
-      LOGGER.info("Http Configurations not found, using Defaults...");
-    }
+  public Object httpPostRequest(String url, String accessToken, Object body, Class responseClass,
+      HttpConfiguration httpConfiguration) throws MpesaException {
+    Integer connectionTimeout = (httpConfiguration.getConnectionTimeout() == null) ? 10 :
+        httpConfiguration.getConnectionTimeout();
+    Integer readTimeout = (httpConfiguration.getReadTimeout() == null) ? 10 :
+        httpConfiguration.getReadTimeout();
+    TimeUnit timeUnit = (httpConfiguration.getTimeUnit() == null) ? TimeUnit.SECONDS :
+        httpConfiguration.getTimeUnit();
 
     ObjectMapper mapper = mapper();
     String jsonString = null;
@@ -170,22 +227,22 @@ public class MpesaHelpers {
     }
 
     RequestBody requestBody = RequestBody
-            .create(MediaType.parse("application/json"), jsonString);
-
+        .create(MediaType.parse("application/json"), jsonString);
 
     OkHttpClient client = new OkHttpClient.Builder()
-            .connectTimeout(connectionTimeout, timeUnit)
-            .readTimeout(readTimeout, timeUnit)
-            .build();
+        .connectTimeout(connectionTimeout, timeUnit)
+        .readTimeout(readTimeout, timeUnit)
+        .writeTimeout(connectionTimeout, timeUnit)
+        .build();
 
     Request request = new Request.Builder()
-            .url(url)
-            .post(requestBody)
-            .header("authorization", "Bearer " + accessToken)
-            .header("cache-control", "no-cache")
-            .header("content-type", "application/json")
-            .header("accept", "application/json")
-            .build();
+        .url(url)
+        .post(requestBody)
+        .header("authorization", "Bearer " + accessToken)
+        .header("cache-control", "no-cache")
+        .header("content-type", "application/json")
+        .header("accept", "application/json")
+        .build();
 
     LOGGER.info("MPESA Request : " + jsonString);
     String response = "";
@@ -238,8 +295,8 @@ public class MpesaHelpers {
   }
 
   /**
-   * Response codes are sent from the clients endpoints back to the gateway.
-   * This is done to acknowledge that the client has received the results.
+   * Response codes are sent from the clients endpoints back to the gateway. This is done to
+   * acknowledge that the client has received the results.
    *
    * @return
    */
@@ -261,7 +318,8 @@ public class MpesaHelpers {
    * @return
    * @throws MpesaException
    */
-  public Password generateStkPassword(String businessShortCode, String passkey) throws MpesaException {
+  public Password generateStkPassword(String businessShortCode, String passkey)
+      throws MpesaException {
     SimpleDateFormat sdf2 = new SimpleDateFormat("yyyyMMddHHmmss");
     Date datetime = new Date(System.currentTimeMillis());
     String timestamp = sdf2.format(datetime);
@@ -275,7 +333,7 @@ public class MpesaHelpers {
   }
 
 
-  private ObjectMapper mapper() {
+  private static ObjectMapper mapper() {
     ObjectMapper mapper = new ObjectMapper();
     mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     return mapper;
