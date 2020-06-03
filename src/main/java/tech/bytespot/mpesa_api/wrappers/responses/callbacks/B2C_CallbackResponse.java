@@ -16,7 +16,7 @@ public class B2C_CallbackResponse {
 
   private static String PHONE_NUMBER = "ReceiverPartyPublicName";
   private static String AMOUNT = "TransactionAmount";
-  private static String RECEIPT = "TransactionAmount";
+  private static String RECEIPT = "TransactionReceipt";
 
 
   public B2C_CallbackResponse() {
@@ -35,12 +35,14 @@ public class B2C_CallbackResponse {
   }
 
   public String getPhoneNumber() {
-    return (String) result.getResultParameters().getResultParameter()
+    return result.getResultParameters().getResultParameter()
         .stream()
         .filter(item -> item.getKey().equalsIgnoreCase(PHONE_NUMBER))
         .map(KeyValue::getValue)
         .findFirst()
-        .orElse(null);
+        .orElse(null)
+        .toString()
+        .substring(0, 11);
   }
 
   public Integer getAmount() {
