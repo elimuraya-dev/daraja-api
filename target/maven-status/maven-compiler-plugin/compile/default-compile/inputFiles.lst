@@ -2,6 +2,7 @@
 /Users/elimuraya/Desktop/workspace/bytespot/springboot/daraja-api/src/main/java/tech/bytespot/mpesa_api/templates/ProcessorsTemplate.java
 /Users/elimuraya/Desktop/workspace/bytespot/springboot/daraja-api/src/main/java/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/Envelope.java
 /Users/elimuraya/Desktop/workspace/bytespot/springboot/daraja-api/src/main/java/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/Fault.java
+/Users/elimuraya/Desktop/workspace/bytespot/springboot/daraja-api/src/main/java/tech/bytespot/mpesa_api/configurations/HttpConfiguration.java
 /Users/elimuraya/Desktop/workspace/bytespot/springboot/daraja-api/src/main/java/tech/bytespot/mpesa_api/wrappers/requests/B2B_Request.java
 /Users/elimuraya/Desktop/workspace/bytespot/springboot/daraja-api/src/main/java/tech/bytespot/mpesa_api/wrappers/requests/Transaction_Status_Request.java
 /Users/elimuraya/Desktop/workspace/bytespot/springboot/daraja-api/src/main/java/tech/bytespot/mpesa_api/wrappers/responses/STK_Response.java
@@ -20,6 +21,7 @@
 /Users/elimuraya/Desktop/workspace/bytespot/springboot/daraja-api/src/main/java/tech/bytespot/mpesa_api/wrappers/user/C2B_RegisterRequest.java
 /Users/elimuraya/Desktop/workspace/bytespot/springboot/daraja-api/src/main/java/tech/bytespot/mpesa_api/utils/MpesaException.java
 /Users/elimuraya/Desktop/workspace/bytespot/springboot/daraja-api/src/main/java/tech/bytespot/mpesa_api/wrappers/requests/STK_Push_Request.java
+/Users/elimuraya/Desktop/workspace/bytespot/springboot/daraja-api/src/main/java/tech/bytespot/mpesa_api/configurations/StkSettings.java
 /Users/elimuraya/Desktop/workspace/bytespot/springboot/daraja-api/src/main/java/tech/bytespot/mpesa_api/wrappers/base/simples/ResultParameters.java
 /Users/elimuraya/Desktop/workspace/bytespot/springboot/daraja-api/src/main/java/tech/bytespot/mpesa_api/wrappers/base/AmountAndPartys.java
 /Users/elimuraya/Desktop/workspace/bytespot/springboot/daraja-api/src/main/java/tech/bytespot/mpesa_api/configurations/MpesaUtils.java

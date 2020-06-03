@@ -22,8 +22,10 @@ public class MpesaIntegrationTest {
 
   private final static Logger LOGGER = Logger.getLogger(MpesaIntegrationTest.class.getName());
   MpesaService mpesaService = new MpesaService();
-  String appKey = System.getenv("TEST_APPKEY");
-  String appSecret = System.getenv("TEST_APPSECRET");
+  //  String appKey = System.getenv("TEST_APPKEY");
+//  String appSecret = System.getenv("TEST_APPSECRET");
+  String appKey = "Bck4ldcVMHDif7qVBOEAf2ia6lYUDMGO";
+  String appSecret = "U5Wl0zgxNMjQWpUg";
 
   String testMsisdn = System.getenv("TEST_PHONE_NO");
   String teststkTransactionId = "ws_CO_260420202021051947";
@@ -37,22 +39,22 @@ public class MpesaIntegrationTest {
   String testComment = "TEST COMMENT";
   String testOccasion = "TEST OCCASION";
 
-  String baseUrl = System.getenv("TEST_BASE_URL");
+  String baseUrl = "https://sendy-payment-app.ngrok.io/payment/";
   String initiatorName = System.getenv("TEST_INITIATOR_NAME");
   String initiatorPassword = System.getenv("TEST_INITIATOR_PASSWORD");
   String securityCredential = System.getenv("TEST_SECURITY_CREDENTIAL");
-  String passKey = System.getenv("TEST_PASSKEY");
-  String token = "GDs2vGAglCInBKKazV9DxqRoFAKA";
+  String passKey = "9f41e0a31d7cfd70210967b93f886154b1184eee79ae94ef8ad96fe421bed033";
+  String token = "cwQpuHjMYeKqCvGrZdmMSmzZMoI7";
 
   MpesaConfiguration payinMpesaConfiguration = MpesaConfiguration.builder()
-      .shortcode("601468")
-      .shortcode2("600000")
-      .inAppMode(MpesaUtils.Test_Mode)
+      .shortcode("399905")
+      .shortcode2("399905")
+      .inAppMode(MpesaUtils.Prod_Mode)
       .withAppKey(appKey)
       .withAppSecret(appSecret)
-      .withTestMsisdn("254708374149")
+      .withTestMsisdn("254704420756")
       .setAccessToken(token)
-      .enableSTK("174379",
+      .enableSTK("399905",
           passKey,
           baseUrl + "stk")
       .enableC2B(baseUrl + "validation",
@@ -109,10 +111,10 @@ public class MpesaIntegrationTest {
   @Test
   void stkPushRequest() throws MpesaException {
     STKPush_Request request = STKPush_Request.builder()
-        .forPhoneNumber(testMsisdn)
+        .forPhoneNumber("254704420756")
         .withAmount(testStkAmount)
         .withDescription("test STK push")
-        .withAccountReference(testAccountRef)
+        .withAccountReference("254704420756")
         .build();
     var response = mpesaService.stkPushRequest(request, payinMpesaConfiguration);
     Assertions

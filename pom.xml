@@ -6,7 +6,7 @@
 
     <groupId>tech.bytespot</groupId>
     <artifactId>daraja-api</artifactId>
-    <version>1.0.1-RELEASE</version>
+    <version>1.0.9-SNAPSHOT</version>
     <name>Daraja API Library</name>
     <description>This library helps java developers to integrate to MPESA APIs easily and fast.</description>
 

@@ -1,37 +1,525 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2026bb8-53ff-4538-9a74-1129aa11f58b" name="Default Changelist" comment="" />
+    <list default="true" id="d2026bb8-53ff-4538-9a74-1129aa11f58b" name="Default Changelist" comment="* Add token field in the configuration class to allow user to set a static token instead of generating ewith every request.&#10;* Update test cases.&#10;* Add README.md">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tech/bytespot/mpesa_api/wrappers/responses/callbacks/B2C_CallbackResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tech/bytespot/mpesa_api/wrappers/responses/callbacks/B2C_CallbackResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MpesaIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MpesaIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/allclasses-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/allpackages-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/constant-values.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/deprecated-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/help-doc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/index-all.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/index-all.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/member-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/member-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/member-search-index.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/overview-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/overview-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/overview-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/package-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/package-search-index.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/serialized-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/serialized-form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/configurations/C2B.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/configurations/C2B.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/configurations/CallbackAndCredential.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/configurations/CallbackAndCredential.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/configurations/MpesaConfiguration.MpesaConfigurationBuilder.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/configurations/MpesaConfiguration.MpesaConfigurationBuilder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/configurations/MpesaConfiguration.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/configurations/MpesaConfiguration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/configurations/MpesaUtils.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/configurations/MpesaUtils.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/configurations/class-use/C2B.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/configurations/class-use/C2B.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/configurations/class-use/CallbackAndCredential.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/configurations/class-use/CallbackAndCredential.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/configurations/class-use/MpesaConfiguration.MpesaConfigurationBuilder.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/configurations/class-use/MpesaConfiguration.MpesaConfigurationBuilder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/configurations/class-use/MpesaConfiguration.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/configurations/class-use/MpesaConfiguration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/configurations/class-use/MpesaUtils.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/configurations/class-use/MpesaUtils.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/configurations/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/configurations/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/configurations/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/configurations/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/configurations/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/configurations/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/services/MpesaCoreService.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/services/MpesaCoreService.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/services/MpesaHelpers.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/services/MpesaHelpers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/services/ProcessorService.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/services/ProcessorService.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/services/class-use/MpesaCoreService.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/services/class-use/MpesaCoreService.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/services/class-use/MpesaHelpers.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/services/class-use/MpesaHelpers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/services/class-use/ProcessorService.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/services/class-use/ProcessorService.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/services/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/services/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/services/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/services/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/services/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/services/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/templates/MpesaCoreTemplate.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/templates/MpesaCoreTemplate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/templates/ProcessorsTemplate.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/templates/ProcessorsTemplate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/templates/class-use/MpesaCoreTemplate.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/templates/class-use/MpesaCoreTemplate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/templates/class-use/ProcessorsTemplate.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/templates/class-use/ProcessorsTemplate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/templates/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/templates/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/templates/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/templates/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/templates/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/templates/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/user/MpesaService.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/user/MpesaService.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/user/MpesaServiceTemplate.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/user/MpesaServiceTemplate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/user/class-use/MpesaService.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/user/class-use/MpesaService.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/user/class-use/MpesaServiceTemplate.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/user/class-use/MpesaServiceTemplate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/user/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/user/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/user/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/user/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/user/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/user/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/utils/MpesaConstants.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/utils/MpesaConstants.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/utils/MpesaException.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/utils/MpesaException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/utils/ResponseWrapper.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/utils/ResponseWrapper.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/utils/class-use/MpesaConstants.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/utils/class-use/MpesaConstants.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/utils/class-use/MpesaException.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/utils/class-use/MpesaException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/utils/class-use/ResponseWrapper.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/utils/class-use/ResponseWrapper.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/utils/core/Commands.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/utils/core/Commands.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/utils/core/Identifiers.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/utils/core/Identifiers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/utils/core/class-use/Commands.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/utils/core/class-use/Commands.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/utils/core/class-use/Identifiers.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/utils/core/class-use/Identifiers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/utils/core/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/utils/core/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/utils/core/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/utils/core/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/utils/core/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/utils/core/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/utils/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/utils/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/utils/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/utils/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/utils/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/utils/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/AmountAndPartys.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/AmountAndPartys.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/B2B_B2C.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/B2B_B2C.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/B2B_Resp.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/B2B_Resp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/B2C_Resp.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/B2C_Resp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/BalanceStatusRetrivalCommons.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/BalanceStatusRetrivalCommons.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/BaseResult.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/BaseResult.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/class-use/AmountAndPartys.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/class-use/AmountAndPartys.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/class-use/B2B_B2C.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/class-use/B2B_B2C.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/class-use/B2B_Resp.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/class-use/B2B_Resp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/class-use/B2C_Resp.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/class-use/B2C_Resp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/class-use/BalanceStatusRetrivalCommons.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/class-use/BalanceStatusRetrivalCommons.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/class-use/BaseResult.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/class-use/BaseResult.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/CallbackMetadata.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/CallbackMetadata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/KeyValue.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/KeyValue.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/MultipleReferenceItems.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/MultipleReferenceItems.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/NameValue.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/NameValue.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/Password.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/Password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/ResultParameters.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/ResultParameters.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/SingleReferenceItem.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/SingleReferenceItem.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/StkBaseResp.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/StkBaseResp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/StkBaseRespAlpha.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/StkBaseRespAlpha.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/StkCallbackBody.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/StkCallbackBody.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/class-use/CallbackMetadata.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/class-use/CallbackMetadata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/class-use/KeyValue.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/class-use/KeyValue.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/class-use/MultipleReferenceItems.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/class-use/MultipleReferenceItems.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/class-use/NameValue.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/class-use/NameValue.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/class-use/Password.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/class-use/Password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/class-use/ResultParameters.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/class-use/ResultParameters.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/class-use/SingleReferenceItem.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/class-use/SingleReferenceItem.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/class-use/StkBaseResp.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/class-use/StkBaseResp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/class-use/StkBaseRespAlpha.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/class-use/StkBaseRespAlpha.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/class-use/StkCallbackBody.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/class-use/StkCallbackBody.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/base/simples/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/Account_Balance_Request.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/Account_Balance_Request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/B2B_Request.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/B2B_Request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/B2C_Request.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/B2C_Request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/C2B_Register_Request.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/C2B_Register_Request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/C2B_Simulate_Request.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/C2B_Simulate_Request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/Reversal_Request.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/Reversal_Request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/STK_Push_Query_Request.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/STK_Push_Query_Request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/STK_Push_Request.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/STK_Push_Request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/Transaction_Status_Request.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/Transaction_Status_Request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/class-use/Account_Balance_Request.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/class-use/Account_Balance_Request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/class-use/B2B_Request.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/class-use/B2B_Request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/class-use/B2C_Request.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/class-use/B2C_Request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/class-use/C2B_Register_Request.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/class-use/C2B_Register_Request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/class-use/C2B_Simulate_Request.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/class-use/C2B_Simulate_Request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/class-use/Reversal_Request.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/class-use/Reversal_Request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/class-use/STK_Push_Query_Request.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/class-use/STK_Push_Query_Request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/class-use/STK_Push_Request.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/class-use/STK_Push_Request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/class-use/Transaction_Status_Request.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/class-use/Transaction_Status_Request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/requests/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/C2B_Response.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/C2B_Response.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/MpesaGeneralResponse.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/MpesaGeneralResponse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/MpesaResponse.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/MpesaResponse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/STK_Response.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/STK_Response.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/TokenResponse.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/TokenResponse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/Account_Balance_CallbackResponse.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/Account_Balance_CallbackResponse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/B2B_CallBackResponse.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/B2B_CallBackResponse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/B2C_CallbackResponse.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/B2C_CallbackResponse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/C2B_Validation_Confirmation_CallbackResponse.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/C2B_Validation_Confirmation_CallbackResponse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/Reversal_CallbackResponse.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/Reversal_CallbackResponse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/STK_Failed_CallbackResponse.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/STK_Failed_CallbackResponse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/STK_Success_CallbackResponse.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/STK_Success_CallbackResponse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/TransactionStatus_CallbackResponse.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/TransactionStatus_CallbackResponse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/class-use/Account_Balance_CallbackResponse.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/class-use/Account_Balance_CallbackResponse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/class-use/B2B_CallBackResponse.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/class-use/B2B_CallBackResponse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/class-use/B2C_CallbackResponse.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/class-use/B2C_CallbackResponse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/class-use/C2B_Validation_Confirmation_CallbackResponse.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/class-use/C2B_Validation_Confirmation_CallbackResponse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/class-use/Reversal_CallbackResponse.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/class-use/Reversal_CallbackResponse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/class-use/STK_Failed_CallbackResponse.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/class-use/STK_Failed_CallbackResponse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/class-use/STK_Success_CallbackResponse.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/class-use/STK_Success_CallbackResponse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/class-use/TransactionStatus_CallbackResponse.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/class-use/TransactionStatus_CallbackResponse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/class-use/stkCallback.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/class-use/stkCallback.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/stkCallback.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/callbacks/stkCallback.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/class-use/C2B_Response.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/class-use/C2B_Response.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/class-use/MpesaGeneralResponse.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/class-use/MpesaGeneralResponse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/class-use/MpesaResponse.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/class-use/MpesaResponse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/class-use/STK_Response.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/class-use/STK_Response.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/class-use/TokenResponse.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/class-use/TokenResponse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/MpesaErrorResponse.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/MpesaErrorResponse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/MpesaServerError.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/MpesaServerError.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/Envelope.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/Envelope.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/Fault.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/Fault.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/class-use/Envelope.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/class-use/Envelope.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/class-use/Fault.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/class-use/Fault.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/class-use/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/class-use/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/class-use/source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/class-use/source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/source.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/class-use/MpesaErrorResponse.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/class-use/MpesaErrorResponse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/class-use/MpesaServerError.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/class-use/MpesaServerError.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/errors/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/responses/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/AccountBalanceRequest.AccountBalanceBuilder.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/AccountBalanceRequest.AccountBalanceBuilder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/AccountBalanceRequest.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/AccountBalanceRequest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/B2B_Request.B2BBuilder.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/B2B_Request.B2BBuilder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/B2B_Request.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/B2B_Request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/B2C_Request.B2CBuilder.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/B2C_Request.B2CBuilder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/B2C_Request.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/B2C_Request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/C2B_RegisterRequest.C2BRegisterBuilder.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/C2B_RegisterRequest.C2BRegisterBuilder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/C2B_RegisterRequest.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/C2B_RegisterRequest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/C2B_SimulateRequest.C2BSimulateBuilder.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/C2B_SimulateRequest.C2BSimulateBuilder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/C2B_SimulateRequest.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/C2B_SimulateRequest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/Reversal_Request.ReversalBuilder.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/Reversal_Request.ReversalBuilder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/Reversal_Request.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/Reversal_Request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/STKPush_Request.STKBuilder.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/STKPush_Request.STKBuilder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/STKPush_Request.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/STKPush_Request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/TransactionStatusRequest.TransactionStatusBuilder.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/TransactionStatusRequest.TransactionStatusBuilder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/TransactionStatusRequest.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/TransactionStatusRequest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/class-use/AccountBalanceRequest.AccountBalanceBuilder.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/class-use/AccountBalanceRequest.AccountBalanceBuilder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/class-use/AccountBalanceRequest.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/class-use/AccountBalanceRequest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/class-use/B2B_Request.B2BBuilder.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/class-use/B2B_Request.B2BBuilder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/class-use/B2B_Request.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/class-use/B2B_Request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/class-use/B2C_Request.B2CBuilder.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/class-use/B2C_Request.B2CBuilder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/class-use/B2C_Request.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/class-use/B2C_Request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/class-use/C2B_RegisterRequest.C2BRegisterBuilder.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/class-use/C2B_RegisterRequest.C2BRegisterBuilder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/class-use/C2B_RegisterRequest.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/class-use/C2B_RegisterRequest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/class-use/C2B_SimulateRequest.C2BSimulateBuilder.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/class-use/C2B_SimulateRequest.C2BSimulateBuilder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/class-use/C2B_SimulateRequest.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/class-use/C2B_SimulateRequest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/class-use/Reversal_Request.ReversalBuilder.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/class-use/Reversal_Request.ReversalBuilder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/class-use/Reversal_Request.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/class-use/Reversal_Request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/class-use/STKPush_Request.STKBuilder.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/class-use/STKPush_Request.STKBuilder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/class-use/STKPush_Request.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/class-use/STKPush_Request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/class-use/TransactionStatusRequest.TransactionStatusBuilder.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/class-use/TransactionStatusRequest.TransactionStatusBuilder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/class-use/TransactionStatusRequest.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/class-use/TransactionStatusRequest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/tech/bytespot/mpesa_api/wrappers/user/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/type-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/type-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/type-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/type-search-index.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/configurations/C2B 2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/configurations/C2B 2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/configurations/C2B.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/configurations/C2B.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/configurations/CallbackAndCredential 2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/configurations/CallbackAndCredential 2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/configurations/CallbackAndCredential.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/configurations/CallbackAndCredential.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/configurations/MpesaConfiguration 2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/configurations/MpesaConfiguration 2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/configurations/MpesaConfiguration$MpesaConfigurationBuilder 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/configurations/MpesaConfiguration$MpesaConfigurationBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/configurations/MpesaConfiguration$MpesaConfigurationBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/configurations/MpesaConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/configurations/MpesaConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/configurations/MpesaUtils 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/configurations/MpesaUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/configurations/MpesaUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/services/MpesaCoreService 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/services/MpesaCoreService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/services/MpesaCoreService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/services/MpesaHelpers 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/services/MpesaHelpers.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/services/MpesaHelpers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/services/ProcessorService 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/services/ProcessorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/services/ProcessorService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/templates/MpesaCoreTemplate 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/templates/MpesaCoreTemplate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/templates/MpesaCoreTemplate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/templates/ProcessorsTemplate 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/templates/ProcessorsTemplate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/templates/ProcessorsTemplate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/user/MpesaService 4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/user/MpesaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/user/MpesaService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/user/MpesaServiceTemplate 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/user/MpesaServiceTemplate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/user/MpesaServiceTemplate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/utils/MpesaConstants 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/utils/MpesaConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/utils/MpesaConstants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/utils/MpesaException 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/utils/MpesaException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/utils/MpesaException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/utils/ResponseWrapper 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/utils/ResponseWrapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/utils/ResponseWrapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/utils/core/Commands 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/utils/core/Commands.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/utils/core/Commands.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/utils/core/Identifiers 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/utils/core/Identifiers.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/utils/core/Identifiers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/AmountAndPartys 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/AmountAndPartys.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/AmountAndPartys.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/B2B_B2C.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/B2B_B2C.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/B2B_Resp 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/B2B_Resp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/B2B_Resp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/B2C_Resp 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/B2C_Resp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/B2C_Resp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/BalanceStatusRetrivalCommons 3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/BalanceStatusRetrivalCommons 3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/BalanceStatusRetrivalCommons.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/BalanceStatusRetrivalCommons.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/BaseResult 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/BaseResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/BaseResult.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/CallbackMetadata 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/CallbackMetadata.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/CallbackMetadata.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/KeyValue 3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/KeyValue 3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/KeyValue.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/KeyValue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/MultipleReferenceItems 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/MultipleReferenceItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/MultipleReferenceItems.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/NameValue 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/NameValue.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/NameValue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/Password 3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/Password 3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/Password.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/Password.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/ResultParameters 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/ResultParameters.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/ResultParameters.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/SingleReferenceItem 3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/SingleReferenceItem 3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/SingleReferenceItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/SingleReferenceItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/StkBaseResp 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/StkBaseResp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/StkBaseResp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/StkBaseRespAlpha 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/StkBaseRespAlpha.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/StkBaseRespAlpha.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/StkCallbackBody 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/StkCallbackBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/base/simples/StkCallbackBody.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/requests/Account_Balance_Request 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/requests/Account_Balance_Request.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/requests/Account_Balance_Request.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/requests/B2B_Request 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/requests/B2B_Request.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/requests/B2B_Request.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/requests/B2C_Request 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/requests/B2C_Request.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/requests/B2C_Request.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/requests/C2B_Register_Request 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/requests/C2B_Register_Request.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/requests/C2B_Register_Request.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/requests/C2B_Simulate_Request 3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/requests/C2B_Simulate_Request 3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/requests/C2B_Simulate_Request.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/requests/C2B_Simulate_Request.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/requests/Reversal_Request 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/requests/Reversal_Request.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/requests/Reversal_Request.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/requests/STK_Push_Query_Request 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/requests/STK_Push_Query_Request.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/requests/STK_Push_Query_Request.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/requests/STK_Push_Request 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/requests/STK_Push_Request.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/requests/STK_Push_Request.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/requests/Transaction_Status_Request 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/requests/Transaction_Status_Request.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/requests/Transaction_Status_Request.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/C2B_Response 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/C2B_Response.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/C2B_Response.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/MpesaGeneralResponse 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/MpesaGeneralResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/MpesaGeneralResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/MpesaResponse 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/MpesaResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/MpesaResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/STK_Response 2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/STK_Response 2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/STK_Response.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/STK_Response.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/TokenResponse 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/TokenResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/TokenResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/callbacks/Account_Balance_CallbackResponse 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/callbacks/Account_Balance_CallbackResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/callbacks/Account_Balance_CallbackResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/callbacks/B2B_CallBackResponse 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/callbacks/B2B_CallBackResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/callbacks/B2B_CallBackResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/callbacks/B2C_CallbackResponse 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/callbacks/B2C_CallbackResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/callbacks/B2C_CallbackResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/callbacks/C2B_Validation_Confirmation_CallbackResponse 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/callbacks/C2B_Validation_Confirmation_CallbackResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/callbacks/C2B_Validation_Confirmation_CallbackResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/callbacks/Reversal_CallbackResponse 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/callbacks/Reversal_CallbackResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/callbacks/Reversal_CallbackResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/callbacks/STK_Failed_CallbackResponse 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/callbacks/STK_Failed_CallbackResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/callbacks/STK_Failed_CallbackResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/callbacks/STK_Success_CallbackResponse 3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/callbacks/STK_Success_CallbackResponse 3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/callbacks/STK_Success_CallbackResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/callbacks/STK_Success_CallbackResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/callbacks/TransactionStatus_CallbackResponse 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/callbacks/TransactionStatus_CallbackResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/callbacks/TransactionStatus_CallbackResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/callbacks/stkCallback 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/callbacks/stkCallback.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/callbacks/stkCallback.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/errors/MpesaErrorResponse 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/errors/MpesaErrorResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/errors/MpesaErrorResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/errors/MpesaServerError 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/errors/MpesaServerError.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/errors/MpesaServerError.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/Envelope 3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/Envelope 3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/Envelope.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/Envelope.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/Fault 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/Fault.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/Fault.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/detail 3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/detail 3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/detail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/detail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/source 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/source.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/responses/errors/bases/source.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/AccountBalanceRequest 2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/AccountBalanceRequest 2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/AccountBalanceRequest$AccountBalanceBuilder 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/AccountBalanceRequest$AccountBalanceBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/AccountBalanceRequest$AccountBalanceBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/AccountBalanceRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/AccountBalanceRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/B2B_Request 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/B2B_Request$B2BBuilder 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/B2B_Request$B2BBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/B2B_Request$B2BBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/B2B_Request.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/B2B_Request.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/B2C_Request 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/B2C_Request$B2CBuilder 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/B2C_Request$B2CBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/B2C_Request$B2CBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/B2C_Request.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/B2C_Request.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/C2B_RegisterRequest 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/C2B_RegisterRequest$C2BRegisterBuilder 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/C2B_RegisterRequest$C2BRegisterBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/C2B_RegisterRequest$C2BRegisterBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/C2B_RegisterRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/C2B_RegisterRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/C2B_SimulateRequest 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/C2B_SimulateRequest$C2BSimulateBuilder 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/C2B_SimulateRequest$C2BSimulateBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/C2B_SimulateRequest$C2BSimulateBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/C2B_SimulateRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/C2B_SimulateRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/Reversal_Request 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/Reversal_Request$ReversalBuilder 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/Reversal_Request$ReversalBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/Reversal_Request$ReversalBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/Reversal_Request.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/Reversal_Request.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/STKPush_Request 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/STKPush_Request$STKBuilder 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/STKPush_Request$STKBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/STKPush_Request$STKBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/STKPush_Request.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/STKPush_Request.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/TransactionStatusRequest 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/TransactionStatusRequest$TransactionStatusBuilder 3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/TransactionStatusRequest$TransactionStatusBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/TransactionStatusRequest$TransactionStatusBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/TransactionStatusRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tech/bytespot/mpesa_api/wrappers/user/TransactionStatusRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/daraja-api-1.0.1-BETA 2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/daraja-api-1.0.1-BETA-javadoc.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/daraja-api-1.0.1-BETA-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/daraja-api-1.0.1-BETA.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom 2.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom 2.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles 3.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles 3.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles 3.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="elimuraya &lt;elimuraya.dev@gmail.com&gt;" />
+      </list>
+    </option>
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--follow-tags" />
+        <option name="title" value="Current Branch" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SIGN_OFF_COMMIT" value="true" />
+  </component>
   <component name="ProjectId" id="1ZRFeREgukYTtsK71lF3Tbk0gvR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/tech" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/java/tech" />
     </key>
+  </component>
+  <component name="RunManager" selected="JUnit.MpesaIntegrationTest.stkPushRequest">
+    <configuration name="MpesaIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="daraja-api" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MpesaIntegrationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MpesaIntegrationTest.b2cRequest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="daraja-api" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MpesaIntegrationTest" />
+      <option name="METHOD_NAME" value="b2cRequest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MpesaIntegrationTest.reversalRequest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="daraja-api" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MpesaIntegrationTest" />
+      <option name="METHOD_NAME" value="reversalRequest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MpesaIntegrationTest.stkPushRequest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="daraja-api" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MpesaIntegrationTest" />
+      <option name="METHOD_NAME" value="stkPushRequest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MpesaIntegrationTest.transactionStatusRequest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="daraja-api" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MpesaIntegrationTest" />
+      <option name="METHOD_NAME" value="transactionStatusRequest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MpesaIntegrationTest.stkPushRequest" />
+        <item itemvalue="JUnit.MpesaIntegrationTest" />
+        <item itemvalue="JUnit.MpesaIntegrationTest.transactionStatusRequest" />
+        <item itemvalue="JUnit.MpesaIntegrationTest.reversalRequest" />
+        <item itemvalue="JUnit.MpesaIntegrationTest.b2cRequest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -43,26 +531,240 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1584794095021</updated>
-      <workItem from="1584794097146" duration="7845000" />
+      <workItem from="1584794097146" duration="12888000" />
+      <workItem from="1584955884506" duration="51000" />
+      <workItem from="1584962886123" duration="32000" />
+      <workItem from="1584968746704" duration="1664000" />
+      <workItem from="1585132533584" duration="122000" />
+      <workItem from="1585140780206" duration="36000" />
+      <workItem from="1585217096669" duration="5005000" />
+      <workItem from="1585253445103" duration="456000" />
+      <workItem from="1585406338635" duration="484000" />
+      <workItem from="1585561063492" duration="555000" />
+      <workItem from="1585562852886" duration="504000" />
+      <workItem from="1585565092584" duration="422000" />
+      <workItem from="1585565730476" duration="583000" />
+      <workItem from="1585566394978" duration="445000" />
+      <workItem from="1585567741639" duration="5117000" />
+      <workItem from="1585649809767" duration="611000" />
+      <workItem from="1586250776805" duration="529000" />
+      <workItem from="1586251364009" duration="260000" />
+      <workItem from="1586433984760" duration="596000" />
+      <workItem from="1586854824224" duration="586000" />
+      <workItem from="1586857001346" duration="326000" />
+      <workItem from="1586864436004" duration="1461000" />
+      <workItem from="1586946732418" duration="597000" />
+      <workItem from="1587021464508" duration="426000" />
+      <workItem from="1587377322056" duration="846000" />
+      <workItem from="1587913808782" duration="8346000" />
+      <workItem from="1587923073373" duration="2356000" />
+      <workItem from="1587968965511" duration="564000" />
+      <workItem from="1587971680464" duration="5482000" />
+      <workItem from="1588000264702" duration="518000" />
+      <workItem from="1588004612574" duration="598000" />
+      <workItem from="1588005446538" duration="264000" />
+      <workItem from="1588005766258" duration="1217000" />
+      <workItem from="1588053968681" duration="314000" />
+      <workItem from="1588057820730" duration="2317000" />
+      <workItem from="1588084511491" duration="1209000" />
+      <workItem from="1588085865867" duration="48000" />
+      <workItem from="1588087668507" duration="358000" />
+      <workItem from="1588095433482" duration="2348000" />
+      <workItem from="1588141542453" duration="345000" />
+      <workItem from="1588141908679" duration="626000" />
+      <workItem from="1588144908840" duration="11000" />
+      <workItem from="1588146906722" duration="2738000" />
+      <workItem from="1588248834318" duration="2491000" />
+      <workItem from="1588425793097" duration="645000" />
+      <workItem from="1588506096045" duration="1153000" />
+      <workItem from="1588507599319" duration="100000" />
+      <workItem from="1588507740586" duration="113000" />
+      <workItem from="1588507886644" duration="3870000" />
+      <workItem from="1589110156603" duration="659000" />
+      <workItem from="1589110981322" duration="155000" />
+      <workItem from="1589111143216" duration="4922000" />
+      <workItem from="1589121973995" duration="172000" />
+      <workItem from="1589122375599" duration="1500000" />
+      <workItem from="1589183662192" duration="595000" />
+      <workItem from="1589265096864" duration="22000" />
+      <workItem from="1591090887161" duration="1455000" />
+      <workItem from="1591189966606" duration="602000" />
     </task>
+    <task id="LOCAL-00001" summary="change version">
+      <created>1584903993175</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1584903993175</updated>
+    </task>
+    <task id="LOCAL-00002" summary="* Throw exception if mpesa response cant be cast to a given response class.&#10;* Add mpesa certificates">
+      <created>1585251533701</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1585251533701</updated>
+    </task>
+    <task id="LOCAL-00003" summary="* Add error codes">
+      <created>1585597927721</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1585597927721</updated>
+    </task>
+    <task id="LOCAL-00004" summary="* VERSION UPDATE">
+      <created>1585598030429</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1585598030429</updated>
+    </task>
+    <task id="LOCAL-00005" summary="* Add timeout limits">
+      <created>1587377499499</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1587377499500</updated>
+    </task>
+    <task id="LOCAL-00006" summary="* Add stk object to the configuration Object&#10;* Add HTTP settings to configuration object&#10;* Add Logger&#10;* Add test cases &#10;* Update Version">
+      <created>1587925049918</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1587925049918</updated>
+    </task>
+    <task id="LOCAL-00007" summary="* Add timeunit to user input">
+      <created>1588148646894</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1588148646894</updated>
+    </task>
+    <task id="LOCAL-00008" summary="* Add test environment variables &#10;* Updade version to 1.0.0-RELEASE">
+      <created>1588507332096</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1588507332096</updated>
+    </task>
+    <task id="LOCAL-00009" summary="* Add token field in the configuration class to allow user to set a static token instead of generating ewith every request.&#10;* Update test cases.&#10;* Add README.md">
+      <created>1589113166036</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1589113166037</updated>
+    </task>
+    <task id="LOCAL-00010" summary="* Add token field in the configuration class to allow user to set a static token instead of generating with every request.&#10;* Update test cases.&#10;* Add README.md">
+      <created>1589119890694</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1589119890694</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="change version" />
+    <MESSAGE value="* Throw exception if mpesa response cant be cast to a given response class.&#10;* Add mpesa certificates" />
+    <MESSAGE value="* Add error codes" />
+    <MESSAGE value="* VERSION UPDATE" />
+    <MESSAGE value="* Add timeout limits" />
+    <MESSAGE value="* Add stk object to the configuration Object&#10;* Add HTTP settings to configuration object&#10;* Add Logger&#10;* Add test cases &#10;* Update Version" />
+    <MESSAGE value="* Add timeunit to user input" />
+    <MESSAGE value="* Add test environment variables &#10;* Updade version to 1.0.0-RELEASE" />
+    <MESSAGE value="* Add token field in the configuration class to allow user to set a static token instead of generating ewith every request.&#10;* Update test cases.&#10;* Add README.md" />
+    <MESSAGE value="* Add token field in the configuration class to allow user to set a static token instead of generating with every request.&#10;* Update test cases.&#10;* Add README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="* Add token field in the configuration class to allow user to set a static token instead of generating with every request.&#10;* Update test cases.&#10;* Add README.md" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="78" key="#Project_Structure" timestamp="1584794287832">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
     <state x="320" y="78" key="#Project_Structure/0.23.1440.797@0.23.1440.797" timestamp="1584794287832" />
+    <state x="533" y="104" key="#com.intellij.ide.util.MemberChooser" timestamp="1589116274386">
+      <screen x="0" y="23" width="1440" height="797" />
+    </state>
+    <state x="533" y="104" key="#com.intellij.ide.util.MemberChooser/0.23.1440.797/1440.23.1920.1057@0.23.1440.797" timestamp="1589116274386" />
+    <state x="2151" y="130" key="#com.intellij.ide.util.MemberChooser/0.23.1440.797/1440.23.1920.1057@1440.23.1920.1057" timestamp="1588147061198" />
+    <state x="533" y="104" key="#com.intellij.ide.util.MemberChooser/0.23.1440.797@0.23.1440.797" timestamp="1587916002392" />
     <state x="282" y="345" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1584795513546">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
     <state x="282" y="345" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.23.1440.797@0.23.1440.797" timestamp="1584795513546" />
+    <state x="1815" y="23" key="CommitChangelistDialog2" timestamp="1589119890152">
+      <screen x="1440" y="23" width="1920" height="1057" />
+    </state>
+    <state x="63" y="23" key="CommitChangelistDialog2/0.23.1440.797/1440.23.1920.1057@0.23.1440.797" timestamp="1589113164612" />
+    <state x="1815" y="23" key="CommitChangelistDialog2/0.23.1440.797/1440.23.1920.1057@1440.23.1920.1057" timestamp="1589119890152" />
+    <state x="281" y="23" key="CommitChangelistDialog2/0.23.1440.797@0.23.1440.797" timestamp="1588508024171" />
+    <state x="281" y="23" key="CommitChangelistDialog2/0.23.1440.877/1440.23.1920.977@0.23.1440.877" timestamp="1587377498640" />
+    <state x="1927" y="120" key="DiffContextDialog" timestamp="1589119853823">
+      <screen x="1440" y="23" width="1920" height="1057" />
+    </state>
+    <state x="1927" y="120" key="DiffContextDialog/0.23.1440.797/1440.23.1920.1057@1440.23.1920.1057" timestamp="1589119853823" />
+    <state width="1382" height="332" key="GridCell.Tab.0.bottom" timestamp="1591124640301">
+      <screen x="0" y="23" width="1440" height="797" />
+    </state>
+    <state width="1382" height="332" key="GridCell.Tab.0.bottom/0.23.1440.797/1440.23.1920.1057@0.23.1440.797" timestamp="1591124640301" />
+    <state width="1382" height="332" key="GridCell.Tab.0.bottom/0.23.1440.797/1440.23.1920.1057@1440.23.1920.1057" timestamp="1589120340814" />
+    <state width="1382" height="332" key="GridCell.Tab.0.bottom/0.23.1440.797@0.23.1440.797" timestamp="1588514787560" />
+    <state width="1382" height="332" key="GridCell.Tab.0.center" timestamp="1591124640300">
+      <screen x="0" y="23" width="1440" height="797" />
+    </state>
+    <state width="1382" height="332" key="GridCell.Tab.0.center/0.23.1440.797/1440.23.1920.1057@0.23.1440.797" timestamp="1591124640300" />
+    <state width="1382" height="332" key="GridCell.Tab.0.center/0.23.1440.797/1440.23.1920.1057@1440.23.1920.1057" timestamp="1589120340811" />
+    <state width="1382" height="332" key="GridCell.Tab.0.center/0.23.1440.797@0.23.1440.797" timestamp="1588514787559" />
+    <state width="1382" height="332" key="GridCell.Tab.0.left" timestamp="1591124640299">
+      <screen x="0" y="23" width="1440" height="797" />
+    </state>
+    <state width="1382" height="332" key="GridCell.Tab.0.left/0.23.1440.797/1440.23.1920.1057@0.23.1440.797" timestamp="1591124640299" />
+    <state width="1382" height="332" key="GridCell.Tab.0.left/0.23.1440.797/1440.23.1920.1057@1440.23.1920.1057" timestamp="1589120340810" />
+    <state width="1382" height="332" key="GridCell.Tab.0.left/0.23.1440.797@0.23.1440.797" timestamp="1588514787557" />
+    <state width="1382" height="332" key="GridCell.Tab.0.right" timestamp="1591124640300">
+      <screen x="0" y="23" width="1440" height="797" />
+    </state>
+    <state width="1382" height="332" key="GridCell.Tab.0.right/0.23.1440.797/1440.23.1920.1057@0.23.1440.797" timestamp="1591124640300" />
+    <state width="1382" height="332" key="GridCell.Tab.0.right/0.23.1440.797/1440.23.1920.1057@1440.23.1920.1057" timestamp="1589120340811" />
+    <state width="1382" height="332" key="GridCell.Tab.0.right/0.23.1440.797@0.23.1440.797" timestamp="1588514787559" />
     <state x="258" y="75" key="Maven.ArtifactSearchDialog" timestamp="1584795117268">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
     <state x="258" y="75" key="Maven.ArtifactSearchDialog/0.23.1440.797@0.23.1440.797" timestamp="1584795117268" />
+    <state x="144" y="84" key="MergeDialog" timestamp="1585251689393">
+      <screen x="0" y="23" width="1440" height="797" />
+    </state>
+    <state x="144" y="84" key="MergeDialog/0.23.1440.797@0.23.1440.797" timestamp="1585251689393" />
+    <state x="436" y="136" key="MultipleFileMergeDialog" timestamp="1585251689442">
+      <screen x="0" y="23" width="1440" height="797" />
+    </state>
+    <state x="436" y="136" key="MultipleFileMergeDialog/0.23.1440.797@0.23.1440.797" timestamp="1585251689442" />
     <state x="208" y="23" key="SettingsEditor" timestamp="1584795089312">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
     <state x="208" y="23" key="SettingsEditor/0.23.1440.797@0.23.1440.797" timestamp="1584795089312" />
+    <state x="1867" y="195" key="Vcs.Push.Dialog.v2" timestamp="1589119992195">
+      <screen x="1440" y="23" width="1920" height="1057" />
+    </state>
+    <state x="1867" y="195" key="Vcs.Push.Dialog.v2/0.23.1440.797/1440.23.1920.1057@1440.23.1920.1057" timestamp="1589119992195" />
+    <state x="320" y="153" key="Vcs.Push.Dialog.v2/0.23.1440.797@0.23.1440.797" timestamp="1588508037459" />
+    <state x="417" y="225" key="git4idea.merge.GitPullDialog" timestamp="1589110992627">
+      <screen x="0" y="23" width="1440" height="797" />
+    </state>
+    <state x="417" y="225" key="git4idea.merge.GitPullDialog/0.23.1440.797/1440.23.1920.1057@0.23.1440.797" timestamp="1589110992627" />
+    <state x="417" y="225" key="git4idea.merge.GitPullDialog/0.23.1440.797@0.23.1440.797" timestamp="1588506535715" />
   </component>
 </project>
