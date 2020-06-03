@@ -15,7 +15,9 @@ public class B2C_CallbackResponse {
   private B2C_Resp result;
 
   private static String PHONE_NUMBER = "ReceiverPartyPublicName";
+  private static String REVERSAL_PHONE_NUMBER = "CreditPartyPublicName";
   private static String AMOUNT = "TransactionAmount";
+  private static String REVERSAL_AMOUNT = "Amount";
   private static String RECEIPT = "TransactionReceipt";
 
 
@@ -35,12 +37,23 @@ public class B2C_CallbackResponse {
   }
 
   public String getPhoneNumber() {
-    return result.getResultParameters().getResultParameter()
+    String substring = result.getResultParameters().getResultParameter()
         .stream()
         .filter(item -> item.getKey().equalsIgnoreCase(PHONE_NUMBER))
         .map(KeyValue::getValue)
         .findFirst()
-        .orElse(null)
+        .orElse("")
+        .toString();
+    return substring.equals("") == true ? substring : substring.substring(0, 11);
+  }
+
+  public String getReversalPhoneNumber() {
+    return result.getResultParameters().getResultParameter()
+        .stream()
+        .filter(item -> item.getKey().equalsIgnoreCase(REVERSAL_PHONE_NUMBER))
+        .map(KeyValue::getValue)
+        .findFirst()
+        .orElse("")
         .toString()
         .substring(0, 11);
   }
@@ -49,6 +62,15 @@ public class B2C_CallbackResponse {
     return (Integer) result.getResultParameters().getResultParameter()
         .stream()
         .filter(item -> item.getKey().equalsIgnoreCase(AMOUNT))
+        .map(KeyValue::getValue)
+        .findFirst()
+        .orElse(null);
+  }
+
+  public Integer getReversalAmount() {
+    return (Integer) result.getResultParameters().getResultParameter()
+        .stream()
+        .filter(item -> item.getKey().equalsIgnoreCase(REVERSAL_AMOUNT))
         .map(KeyValue::getValue)
         .findFirst()
         .orElse(null);
