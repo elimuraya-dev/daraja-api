@@ -9,14 +9,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class BaseResult {
 
 
-    @JsonProperty("ResultType")
-    private Integer resultType;
+  @JsonProperty("ResultType")
+  private Integer resultType;
 
-    @JsonProperty("ResultCode")
-    private Integer resultCode;
+  @JsonProperty("ResultCode")
+  private Integer resultCode;
 
-    @JsonProperty("ResultDesc")
-    private String ResultDesc;
+  @JsonProperty("ResultDesc")
+  private String ResultDesc;
 
   @JsonProperty("OriginatorConversationID")
   private String originatorConversationID;
@@ -33,7 +33,9 @@ public class BaseResult {
   public BaseResult() {
   }
 
-  public BaseResult(Integer resultType, Integer resultCode, String resultDesc, String originatorConversationID, String conversationID, String transactionID, tech.bytespot.mpesa_api.wrappers.base.simples.ResultParameters resultParameters) {
+  public BaseResult(Integer resultType, Integer resultCode, String resultDesc,
+      String originatorConversationID, String conversationID, String transactionID,
+      tech.bytespot.mpesa_api.wrappers.base.simples.ResultParameters resultParameters) {
     this.resultType = resultType;
     this.resultCode = resultCode;
     ResultDesc = resultDesc;
@@ -52,36 +54,36 @@ public class BaseResult {
   }
 
   public Integer getResultCode() {
-        return resultCode;
-    }
+    return resultCode;
+  }
 
-    public void setResultCode(Integer resultCode) {
-        this.resultCode = resultCode;
-    }
+  public void setResultCode(Integer resultCode) {
+    this.resultCode = resultCode;
+  }
 
-    public String getResultDesc() {
-        return ResultDesc;
-    }
+  public String getResultDesc() {
+    return ResultDesc;
+  }
 
-    public void setResultDesc(String resultDesc) {
-        ResultDesc = resultDesc;
-    }
+  public void setResultDesc(String resultDesc) {
+    ResultDesc = resultDesc;
+  }
 
-    public String getOriginatorConversationID() {
-        return originatorConversationID;
-    }
+  public String getOriginatorConversationID() {
+    return originatorConversationID;
+  }
 
-    public void setOriginatorConversationID(String originatorConversationID) {
-        this.originatorConversationID = originatorConversationID;
-    }
+  public void setOriginatorConversationID(String originatorConversationID) {
+    this.originatorConversationID = originatorConversationID;
+  }
 
-    public String getConversationID() {
-        return conversationID;
-    }
+  public String getConversationID() {
+    return conversationID;
+  }
 
-    public void setConversationID(String conversationID) {
-        this.conversationID = conversationID;
-    }
+  public void setConversationID(String conversationID) {
+    this.conversationID = conversationID;
+  }
 
   public String getTransactionID() {
     return transactionID;
@@ -95,7 +97,8 @@ public class BaseResult {
     return resultParameters;
   }
 
-  public void setResultParameters(tech.bytespot.mpesa_api.wrappers.base.simples.ResultParameters resultParameters) {
+  public void setResultParameters(
+      tech.bytespot.mpesa_api.wrappers.base.simples.ResultParameters resultParameters) {
     this.resultParameters = resultParameters;
   }
 }

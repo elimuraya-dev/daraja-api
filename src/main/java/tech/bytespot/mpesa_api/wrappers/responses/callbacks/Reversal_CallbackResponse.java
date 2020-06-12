@@ -14,4 +14,6 @@ public class Reversal_CallbackResponse extends B2C_CallbackResponse {
     public Reversal_CallbackResponse(B2C_Resp result) {
         super(result);
     }
+
+
 }
